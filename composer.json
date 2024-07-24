@@ -1,0 +1,9 @@
+{
+    "name": "abdullah/book-manager",
+    "description": "Assignment from codexpert",
+    "autoload": {
+        "psr-4": {
+            "Abdullah\\BookManager\\": "includes/"
+        }
+    }
+}
