@@ -1,5 +1,7 @@
 <?php
 
+namespace Book_Manager\includes;
+
 /**
  * Fired during plugin activation
  *
@@ -32,6 +34,29 @@ class Book_Manager_Activator
      */
     public static function activate()
     {
+        global $wpdb;
+
+        // Defining the table name
+        $table_name = $wpdb->prefix . 'book_records';
+
+        // this will return the correct character set and collation for the database.
+        $charset_collate = $wpdb->get_charset_collate();
+
+        // SQL statement to create the table
+        $sql = "CREATE TABLE $table_name (
+            book_id INT(11) NOT NULL AUTO_INCREMENT,
+            title VARCHAR(255) NOT NULL,
+            author VARCHAR(50) NOT NULL,
+            publisher VARCHAR(50) NOT NULL,
+            ISBN VARCHAR(20) NOT NULL UNIQUE,
+            publication_date DATE NOT NULL,
+            PRIMARY KEY (book_id)
+        ) $charset_collate;";
+
+        // Include the upgrade script
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         
+        dbDelta($sql);
+
     }
 }

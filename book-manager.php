@@ -46,8 +46,8 @@ require BKM_INCLUDE_PATH . '/class-book-manager.php';
  */
 function activate_book_manager()
 {
-	require_once BKM_ADDONS_PATH . 'class-book-manager-activator.php';
-	Booking_Manager_Activator::activate();
+	require_once BKM_INCLUDE_PATH . 'class-book-manager-activator.php';
+	Book_Manager\includes\Book_Manager_Activator::activate();
 }
 
 register_activation_hook(__FILE__, 'activate_book_manager');
@@ -59,3 +59,7 @@ if (!function_exists('bkm_Init')) {
 	}
 	bkm_Init();
 }
+
+// global $wpdb;
+
+// $wpdb->get_var("SHOW TABLES LIKE wp_options");
