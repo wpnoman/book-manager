@@ -25,7 +25,7 @@ class Book_manager
 
 	/**
 	 *
-	 * $instance property for instance
+	 * init the plugin
 	 */
 	public function init()
 	{
@@ -44,8 +44,6 @@ class Book_manager
 	/**
 	 * Load the required dependencies for this plugin.
 	 *
-	 * Include the following files that make up the plugin:
-	 *
 	 * @since    1.0.0
 	 */
 	private function load_required_files()
@@ -58,12 +56,20 @@ class Book_manager
 	}
 
 
+	/**
+	 * Defining admin hooks
+	 *
+	 * @link https://developer.wordpress.org/reference/hooks/admin_menu/
+	 * @since    1.0.0
+	 */
 	private function define_admin_hooks()
 	{
 		$admin = new Book_Manager_Admin();
 
 		// registering admin menu
-		add_action('admin_menu', [$admin, 'menu']);
+		add_action('admin_menu', [$admin, 'menu'], 10);
 
+		// enqueue admin scripts/styles
+		add_action('admin_enqueue_scripts', [$admin, 'enqueue_assets']);
 	}
 }

@@ -16,7 +16,6 @@ class Book_Manager_Admin
 
 	public function __construct()
 	{
-		
 	}
 
 
@@ -32,7 +31,7 @@ class Book_Manager_Admin
 			esc_html__('Book Records', 'book-manager'),
 			esc_html__('Book Records', 'book-manager'),
 			'manage_options',
-			'advanced-addons',
+			'book-manager',
 			[$this, 'dashboard'],
 			'dashicons-book',
 			'38.1'
@@ -47,5 +46,36 @@ class Book_Manager_Admin
 	{
 		// dashboard output
 		include_once BKM_ADDONS_PATH . 'admin/views/main.dashboard.php';
+	}
+
+	public function enqueue_assets($admin_page)
+	{
+
+		/**
+		 * This function is provided for demonstration purposes only.
+		 *
+		 * An instance of this class should be passed to the run() function
+		 * defined in Booking_Manager_Loader as all of the hooks are defined
+		 * in that particular class.
+		 *
+		 * The Booking_Manager_Loader will then create the relationship
+		 * between the defined hooks and the functions defined in this
+		 * class.
+		 */
+		
+		if ('toplevel_page_book-manager' !== $admin_page) {
+			return;
+		}
+		$asset_file = BKM_ADDONS_PATH . 'build/index.asset.php';
+
+
+		if (!file_exists($asset_file)) {
+			return;
+		}
+
+		$asset = include $asset_file;
+
+		wp_enqueue_style('bkm_react-style', BKM_ADDONS_URL . 'build/index.css');
+		wp_enqueue_script('bkm_react-bundle', BKM_ADDONS_URL . 'build/index.js', $asset['dependencies']);
 	}
 }

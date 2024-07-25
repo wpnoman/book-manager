@@ -1,5 +1,4 @@
-import React from "react";
-import { createRoot } from 'react-dom/client';
+import { createRoot } from '@wordpress/element';
 import domReady from '@wordpress/dom-ready';
 import App from "./App";
 
@@ -11,9 +10,7 @@ import './style/main.scss';
 
 
 domReady(() => {
-    ReactDOM.createRoot(document.getElementById('advanced_addon')).render(
-        <React.StrictMode>
-            <App />
-        </React.StrictMode>,
-    );
+    const domNode = document.getElementById('book_manager');
+    const root = createRoot(domNode);
+    root.render(<App />);
 });

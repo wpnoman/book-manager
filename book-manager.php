@@ -39,6 +39,19 @@ define('BKM_INCLUDE_PATH', BKM_ADDONS_DIR . '/includes/');
 require BKM_INCLUDE_PATH . '/class-book-manager.php';
 
 
+
+/**
+ * The code that runs during plugin activation.
+ * This action is documented in includes/class-booking-manager-activator.php
+ */
+function activate_book_manager()
+{
+	require_once BKM_ADDONS_PATH . 'class-book-manager-activator.php';
+	Booking_Manager_Activator::activate();
+}
+
+register_activation_hook(__FILE__, 'activate_book_manager');
+
 if (!function_exists('bkm_Init')) {
 	function bkm_Init()
 	{
