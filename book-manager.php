@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name: Book Manager
  * Description: 
@@ -13,7 +14,7 @@
  */
 
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
@@ -22,27 +23,26 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Define constance
  */
 
-define( 'BKM_VERSION', '1.0.0' );
+define('BKM_VERSION', '1.0.0');
 
-define( 'BKM_ADDONS_URL', plugins_url( '/', __FILE__ ) );
-define( 'BKM_ADDONS_DIR', dirname( __FILE__ ) );
-define( 'BKM_ADDONS_PATH', plugin_dir_path( __FILE__ ) );
-define( 'BKM_ASSETS', BKM_ADDONS_URL . 'assets/' );
-define( 'BKM_INCLUDE_PATH', BKM_ADDONS_DIR . '/includes/' );
-define( 'BKM_TEMPLATE_PATH', BKM_ADDONS_DIR . '/includes/Widgets/templates/' );
+define('BKM_PREFIX', 'bkm_');
+define('BKM_ADDONS_URL', plugins_url('/', __FILE__));
+define('BKM_ADDONS_DIR', dirname(__FILE__));
+define('BKM_ADDONS_PATH', plugin_dir_path(__FILE__));
+define('BKM_ASSETS', BKM_ADDONS_URL . 'assets/');
+define('BKM_INCLUDE_PATH', BKM_ADDONS_DIR . '/includes/');
 
 
 /**
- * Load Requried fiels
+ * Load base file
  */
-require BKM_INCLUDE_PATH . '/book-manager.php';
-require BKM_INCLUDE_PATH . '/admin/Admin.php';
+require BKM_INCLUDE_PATH . '/class-book-manager.php';
 
 
-if ( ! function_exists( 'BKM_Init' ) ) {
-	function BKM_init() {
-		// return Book_manager\Book_manager::getInstance();
-		// return new \Book_manager\Book_manager();
+if (!function_exists('bkm_Init')) {
+	function bkm_Init()
+	{
+		(new Book_manager\includes\Book_manager())->init();
 	}
 	bkm_Init();
 }
