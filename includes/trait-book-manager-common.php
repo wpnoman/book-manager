@@ -74,4 +74,22 @@ trait Book_Manager_Common
         
         return $this;
     }
+
+    public function view_book_resords( $request ){
+
+        global $wpdb;
+        
+        // set data for pagination
+        $page = isset($request->get_params()['page']) ? intval($request->get_params()['page']) : 1;
+        $books_per_page = 10;
+        $offset = ($page - 1) * $books_per_page;
+
+        $table = $wpdb->prefix . BKM_DB_TABLE; //
+        $results = $wpdb->get_results(
+            $wpdb->prepare("SELECT * FROM %i LIMIT %d OFFSET %d", $table, $books_per_page, $offset)
+        );
+
+        return $results;
+
+    }
 }

@@ -29,13 +29,18 @@ class Book_Manager_API
         // Adding Book item
         register_rest_route('book-manager/v1', '/create-record', [
             'methods'  => 'POST',
-            'callback' => [$this, 'create_records'],
+            'callback' => [$this, 'create_record'],
             // 'permission_callback' => 'myplugin_permission_callback',
+        ]);
+
+        register_rest_route('book-manager/v1', '/book-records', [
+            'methods'  => 'GET',
+            'callback' => [$this, 'book_records'],
         ]);
     }
 
 
-    function create_records(\WP_REST_Request $request)
+    public function create_record(\WP_REST_Request $request)
     {
         $nonce = $request->get_param('_wpnonce');
 
@@ -46,15 +51,22 @@ class Book_Manager_API
 
         // collecting book information
         $book_info = [];
-        $book_info['title'] = !empty($request->get_params()['title']) ? $this->set($request->get_params()['title']) : false;
-        $book_info['author'] = !empty($request->get_params()['author']) ? $this->set($request->get_params()['author']) : false;
-        $book_info['publisher'] = !empty($request->get_params()['publisher']) ? $this->set($request->get_params()['publisher']) : false;
-        $book_info['ISBN'] = !empty($request->get_params()['ISBN']) ? $this->set($request->get_params()['ISBN']) : false;
-        $book_info['publication_date'] = !empty($request->get_params()['publication_date']) ? $this->set($request->get_params()['publication_date']) : false;
+        $book_info['title'] = isset($request->c()['title']) ? $this->set($request->get_params()['title']) : false;
+        $book_info['author'] = isset($request->get_params()['author']) ? $this->set($request->get_params()['author']) : false;
+        $book_info['publisher'] = isset($request->get_params()['publisher']) ? $this->set($request->get_params()['publisher']) : false;
+        $book_info['ISBN'] = isset($request->get_params()['ISBN']) ? $this->set($request->get_params()['ISBN']) : false;
+        $book_info['publication_date'] = isset($request->get_params()['publication_date']) ? $this->set($request->get_params()['publication_date']) : false;
 
 
         $res = $this->validate($book_info)->insert_book()->return_response();
 
         return new \WP_REST_Response($res, 200);
+    }
+
+    public function book_records(\WP_REST_Request $request)
+    {
+        $results = $this->view_book_resords($request);
+
+        return new \WP_REST_Response($results, 200);
     }
 }
