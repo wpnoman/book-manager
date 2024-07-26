@@ -76,6 +76,6 @@ class Book_Manager_Admin
 		$asset = include $asset_file;
 
 		wp_enqueue_style('bkm_react-style', BKM_ADDONS_URL . 'build/index.css');
-		wp_enqueue_script('bkm_react-bundle', BKM_ADDONS_URL . 'build/index.js', $asset['dependencies']);
+		wp_enqueue_script('bkm_react-bundle', BKM_ADDONS_URL . 'build/index.js', $asset['dependencies'], time());
 	}
 }
