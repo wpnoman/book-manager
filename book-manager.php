@@ -57,9 +57,10 @@ if (!function_exists('bkm_Init')) {
 	{
 		(new Book_manager\includes\Book_manager())->init();
 	}
-	bkm_Init();
+	// bkm_Init();
 }
 
-// global $wpdb;
+$data = new Book_manager\includes\Book_manager();
+$data->init();
 
-// $wpdb->get_var("SHOW TABLES LIKE wp_options");
+$cc = new Book_manager\includes\Book_Manager_Common();
