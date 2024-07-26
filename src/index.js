@@ -8,7 +8,7 @@ import App from "./App";
  */
 import './style/main.scss';
 
-// import { ThemeProvider } from "@material-tailwind/react";
+import { ThemeProvider } from "@material-tailwind/react";
 
 
 
@@ -16,8 +16,8 @@ domReady(() => {
     const domNode = document.getElementById('book_manager');
     const root = createRoot(domNode);
     root.render(
-        // <ThemeProvider>
+        <ThemeProvider>
             <App />
-        // </ThemeProvider>
+        </ThemeProvider>
     );
 });

@@ -36,6 +36,15 @@ class Book_Manager_Admin
 			'dashicons-book',
 			'38.1'
 		);
+
+		add_submenu_page( 
+			'book-manager',
+			__( 'Add Records', 'notificationx' ),
+			__( 'Add Records', 'notificationx' ),
+			'manage_options',
+			'add-book-record',
+			[$this, 'dashboard'],
+		);
 	}
 
 	/**
@@ -63,9 +72,10 @@ class Book_Manager_Admin
 		 * class.
 		 */
 		
-		if ('toplevel_page_book-manager' !== $admin_page) {
-			return;
-		}
+		// if ('toplevel_page_book-manager' !== $admin_page) {
+		// 	return;
+		// }
+		
 		$asset_file = BKM_ADDONS_PATH . 'build/index.asset.php';
 
 
