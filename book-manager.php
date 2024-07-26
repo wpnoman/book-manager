@@ -24,6 +24,7 @@ if (!defined('ABSPATH')) {
  */
 
 define('BKM_VERSION', '1.0.0');
+define('BKM_DB_TABLE', 'book_records');
 
 define('BKM_PREFIX', 'bkm_');
 define('BKM_ADDONS_URL', plugins_url('/', __FILE__));
@@ -36,14 +37,15 @@ define('BKM_INCLUDE_PATH', BKM_ADDONS_DIR . '/includes/');
 /**
  * Load base file
  */
-require BKM_INCLUDE_PATH . '/class-book-manager.php';
-
+require_once BKM_INCLUDE_PATH . 'class-book-manager.php';
+require_once BKM_INCLUDE_PATH . 'trait-book-manager-common.php';
 
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-booking-manager-activator.php
  */
+
 function activate_book_manager()
 {
 	require_once BKM_INCLUDE_PATH . 'class-book-manager-activator.php';
@@ -57,10 +59,5 @@ if (!function_exists('bkm_Init')) {
 	{
 		(new Book_manager\includes\Book_manager())->init();
 	}
-	// bkm_Init();
+	bkm_Init();
 }
-
-$data = new Book_manager\includes\Book_manager();
-$data->init();
-
-$cc = new Book_manager\includes\Book_Manager_Common();

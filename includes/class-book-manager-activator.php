@@ -37,7 +37,7 @@ class Book_Manager_Activator
         global $wpdb;
 
         // Defining the table name
-        $table_name = $wpdb->prefix . 'book_records';
+        $table_name = $wpdb->prefix . BKM_DB_TABLE;
 
         // this will return the correct character set and collation for the database.
         $charset_collate = $wpdb->get_charset_collate();

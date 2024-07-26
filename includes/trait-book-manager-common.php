@@ -12,28 +12,30 @@
 namespace Book_Manager\includes;
 
 
- if (!defined('ABSPATH'))
-	exit; // Exit if accessed directly.
+if (!defined('ABSPATH'))
+    exit; // Exit if accessed directly.
 
-    echo 'ddd';
-class Book_Manager_Common
+trait Book_Manager_Common
 {
 
-    private $has_error;
-    private $book_fields = array( 'title', 'author', 'publisher', 'ISBN', 'publication_date' );
+    private $has_error = false;
+    private $response = [];
+    private $book_info = [];
+    private $book_fields = array('title', 'author', 'publisher', 'ISBN', 'publication_date');
 
-    public function __construct(){
-        echo 'hello';
-    }
-    public function set( $data ){
+
+    public function set($data)
+    {
         return sanitize_text_field($data);
     }
 
-    public function validate( $book_info ){
-        foreach( $book_info as $field){
-            if( array_key_exists($field, $this->book_fields) && !empty( $field )) {
-                return;
-            }else{
+    public function validate($book_info)
+    {
+        $this->book_info = $book_info;
+        foreach ($this->book_info as $key => $field) {
+            if (array_key_exists($key, array_flip($this->book_fields)) && !empty($field)) {
+                continue;
+            } else {
                 $this->has_error = true;
             }
         }
@@ -41,15 +43,35 @@ class Book_Manager_Common
         return $this;
     }
 
-    public function return_response( ){
-        $response = '';
-        if( $this->has_error == true ){
-            $response = 'one or more fields are empty!';
-        }else{
-            $response = 'Success';
+    public function return_response()
+    {
+        // checking and insert the response
+        if ($this->has_error != true) {
+            $this->response['status'] = 'Success';
+        } else {
+            $this->response['status'] = 'error';
+            $this->response['message'] = 'one or more fields are empty!';
         }
-        return new \WP_REST_Response($response, 200);
+        return $this->response;
     }
 
-    
+    public function insert_book()
+    {
+
+        if ($this->has_error != true) {
+            // insert to db
+            global $wpdb;
+            $table = $wpdb->prefix . BKM_DB_TABLE;
+            $format = array('%s', '%s', '%s', '%s', '%s');
+            $status = $wpdb->insert($table, $this->book_info, $format);
+
+            if ($status != false) {
+                $this->response['insert'] = 'success';
+            }else{
+                $this->response['insert'] = 'error';
+            }
+        }
+        
+        return $this;
+    }
 }
