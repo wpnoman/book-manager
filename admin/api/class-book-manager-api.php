@@ -33,9 +33,16 @@ class Book_Manager_API
             // 'permission_callback' => 'myplugin_permission_callback',
         ]);
 
+        // Viewing book records
         register_rest_route('book-manager/v1', '/book-records', [
             'methods'  => 'GET',
             'callback' => [$this, 'book_records'],
+        ]);
+
+        // delete book records
+        register_rest_route('book-manager/v1', '/delete-record', [
+            'methods'  => 'POST',
+            'callback' => [$this, 'delete_book_record'],
         ]);
     }
 
@@ -60,13 +67,22 @@ class Book_Manager_API
 
         $res = $this->validate($book_info)->insert_book()->return_response();
 
-        return new \WP_REST_Response($res, 200);
+        return new \WP_REST_Response($res, 201);
     }
 
     public function book_records(\WP_REST_Request $request)
     {
-        $results = $this->view_book_resords($request);
+        return new \WP_REST_Response( $this->view_book_resords($request), 200 );
+    }
 
-        return new \WP_REST_Response($results, 200);
+    public function delete_book_record( \WP_REST_Request $request ){
+
+        $record_id = isset($request->get_params()['id']);
+
+        if( empty($record_id) )
+            return new \WP_REST_Response( ['status' => 'error', 'message' => 'Paramiter `ID` is Missing..' ], 400); 
+        
+
+        return new \WP_REST_Response($this->delete_record($record_id), 204);
     }
 }
