@@ -58,7 +58,7 @@ class Book_Manager_API
 
         // collecting book information
         $book_info = [];
-        $book_info['title'] = isset($request->c()['title']) ? $this->set($request->get_params()['title']) : false;
+        $book_info['title'] = isset($request->get_params()['title']) ? $this->set($request->get_params()['title']) : false;
         $book_info['author'] = isset($request->get_params()['author']) ? $this->set($request->get_params()['author']) : false;
         $book_info['publisher'] = isset($request->get_params()['publisher']) ? $this->set($request->get_params()['publisher']) : false;
         $book_info['ISBN'] = isset($request->get_params()['ISBN']) ? $this->set($request->get_params()['ISBN']) : false;

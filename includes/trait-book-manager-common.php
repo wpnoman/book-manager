@@ -47,7 +47,7 @@ trait Book_Manager_Common
     {
         // checking and insert the response
         if ($this->has_error != true) {
-            $this->response['status'] = 'Success';
+            $this->response['status'] = 'success';
         } else {
             $this->response['status'] = 'error';
             $this->response['message'] = 'one or more fields are empty!';
