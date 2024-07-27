@@ -3812,17 +3812,6 @@ Object.defineProperty(exports, "__esModule", ({value:true}));function _export(ta
 
 /***/ }),
 
-/***/ "./node_modules/@material-tailwind/react/components/Button/index.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/@material-tailwind/react/components/Button/index.js ***!
-  \**************************************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", ({value:true}));function _export(target,all){for(var name in all)Object.defineProperty(target,name,{enumerable:true,get:all[name]})}_export(exports,{Button:function(){return Button},default:function(){return _default}});var _react=_interopRequireDefault(__webpack_require__(/*! react */ "react"));var _propTypes=_interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));var _materialRippleEffects=_interopRequireDefault(__webpack_require__(/*! material-ripple-effects */ "./node_modules/material-ripple-effects/index.js"));var _classnames=_interopRequireDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));var _tailwindMerge=__webpack_require__(/*! tailwind-merge */ "./node_modules/tailwind-merge/dist/index.js");var _findMatch=_interopRequireDefault(__webpack_require__(/*! ../../utils/findMatch */ "./node_modules/@material-tailwind/react/utils/findMatch.js"));var _objectsToString=_interopRequireDefault(__webpack_require__(/*! ../../utils/objectsToString */ "./node_modules/@material-tailwind/react/utils/objectsToString.js"));var _theme=__webpack_require__(/*! ../../context/theme */ "./node_modules/@material-tailwind/react/context/theme.js");var _spinner=_interopRequireDefault(__webpack_require__(/*! ../Spinner */ "./node_modules/@material-tailwind/react/components/Spinner/index.js"));var _button=__webpack_require__(/*! ../../types/components/button */ "./node_modules/@material-tailwind/react/types/components/button.js");function _defineProperty(obj,key,value){if(key in obj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true})}else{obj[key]=value}return obj}function _extends(){_extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key]}}}return target};return _extends.apply(this,arguments)}function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function _objectWithoutProperties(source,excluded){if(source==null)return{};var target=_objectWithoutPropertiesLoose(source,excluded);var key,i;if(Object.getOwnPropertySymbols){var sourceSymbolKeys=Object.getOwnPropertySymbols(source);for(i=0;i<sourceSymbolKeys.length;i++){key=sourceSymbolKeys[i];if(excluded.indexOf(key)>=0)continue;if(!Object.prototype.propertyIsEnumerable.call(source,key))continue;target[key]=source[key]}}return target}function _objectWithoutPropertiesLoose(source,excluded){if(source==null)return{};var target={};var sourceKeys=Object.keys(source);var key,i;for(i=0;i<sourceKeys.length;i++){key=sourceKeys[i];if(excluded.indexOf(key)>=0)continue;target[key]=source[key]}return target}var Button=_react.default.forwardRef(function(_param,ref){var variant=_param.variant,size=_param.size,color=_param.color,fullWidth=_param.fullWidth,ripple=_param.ripple,className=_param.className,children=_param.children,loading=_param.loading,rest=_objectWithoutProperties(_param,["variant","size","color","fullWidth","ripple","className","children","loading"]);var button=(0,_theme.useTheme)().button;var valid=button.valid,defaultProps=button.defaultProps,styles=button.styles;var base=styles.base,variants=styles.variants,sizes=styles.sizes;variant=variant!==null&&variant!==void 0?variant:defaultProps.variant;size=size!==null&&size!==void 0?size:defaultProps.size;color=color!==null&&color!==void 0?color:defaultProps.color;fullWidth=fullWidth!==null&&fullWidth!==void 0?fullWidth:defaultProps.fullWidth;ripple=ripple!==null&&ripple!==void 0?ripple:defaultProps.ripple;className=(0,_tailwindMerge.twMerge)(defaultProps.className||"",className);var rippleEffect=ripple!==undefined&&new _materialRippleEffects.default;var buttonBase=(0,_objectsToString.default)(base.initial);var buttonVariant=(0,_objectsToString.default)(variants[(0,_findMatch.default)(valid.variants,variant,"filled")][(0,_findMatch.default)(valid.colors,color,"gray")]);var buttonSize=(0,_objectsToString.default)(sizes[(0,_findMatch.default)(valid.sizes,size,"md")]);var classes=(0,_tailwindMerge.twMerge)((0,_classnames.default)(buttonBase,buttonSize,buttonVariant,_defineProperty({},(0,_objectsToString.default)(base.fullWidth),fullWidth),{"flex items-center gap-2":loading,"gap-3":size==="lg"}),className);var spinnerClass=(0,_tailwindMerge.twMerge)((0,_classnames.default)({"w-4 h-4":true,"w-5 h-5":size==="lg"}));var _rest_disabled;return _react.default.createElement("button",_extends({},rest,{disabled:(_rest_disabled=rest.disabled)!==null&&_rest_disabled!==void 0?_rest_disabled:loading,ref:ref,className:classes,type:rest.type||"button",onMouseDown:function(e){var onMouseDown=rest===null||rest===void 0?void 0:rest.onMouseDown;if(ripple){rippleEffect.create(e,(variant==="filled"||variant==="gradient")&&color!=="white"?"light":"dark")}return typeof onMouseDown==="function"&&onMouseDown(e)}}),loading&&_react.default.createElement(_spinner.default,{className:spinnerClass}),children)});Button.propTypes={variant:_propTypes.default.oneOf(_button.propTypesVariant),size:_propTypes.default.oneOf(_button.propTypesSize),color:_propTypes.default.oneOf(_button.propTypesColor),fullWidth:_button.propTypesFullWidth,ripple:_button.propTypesRipple,className:_button.propTypesClassName,children:_button.propTypesChildren,loading:_button.propTypesLoading};Button.displayName="MaterialTailwind.Button";var _default=Button;
-
-/***/ }),
-
 /***/ "./node_modules/@material-tailwind/react/components/ButtonGroup/index.js":
 /*!*******************************************************************************!*\
   !*** ./node_modules/@material-tailwind/react/components/ButtonGroup/index.js ***!
@@ -3831,6 +3820,17 @@ Object.defineProperty(exports, "__esModule", ({value:true}));function _export(ta
 
 "use strict";
 Object.defineProperty(exports, "__esModule", ({value:true}));function _export(target,all){for(var name in all)Object.defineProperty(target,name,{enumerable:true,get:all[name]})}_export(exports,{ButtonGroup:function(){return ButtonGroup},default:function(){return _default}});var _react=_interopRequireDefault(__webpack_require__(/*! react */ "react"));var _propTypes=_interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));var _classnames=_interopRequireDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));var _tailwindMerge=__webpack_require__(/*! tailwind-merge */ "./node_modules/tailwind-merge/dist/index.js");var _findMatch=_interopRequireDefault(__webpack_require__(/*! ../../utils/findMatch */ "./node_modules/@material-tailwind/react/utils/findMatch.js"));var _objectsToString=_interopRequireDefault(__webpack_require__(/*! ../../utils/objectsToString */ "./node_modules/@material-tailwind/react/utils/objectsToString.js"));var _theme=__webpack_require__(/*! ../../context/theme */ "./node_modules/@material-tailwind/react/context/theme.js");var _button=__webpack_require__(/*! ../../types/components/button */ "./node_modules/@material-tailwind/react/types/components/button.js");function _defineProperty(obj,key,value){if(key in obj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true})}else{obj[key]=value}return obj}function _extends(){_extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key]}}}return target};return _extends.apply(this,arguments)}function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function _objectWithoutProperties(source,excluded){if(source==null)return{};var target=_objectWithoutPropertiesLoose(source,excluded);var key,i;if(Object.getOwnPropertySymbols){var sourceSymbolKeys=Object.getOwnPropertySymbols(source);for(i=0;i<sourceSymbolKeys.length;i++){key=sourceSymbolKeys[i];if(excluded.indexOf(key)>=0)continue;if(!Object.prototype.propertyIsEnumerable.call(source,key))continue;target[key]=source[key]}}return target}function _objectWithoutPropertiesLoose(source,excluded){if(source==null)return{};var target={};var sourceKeys=Object.keys(source);var key,i;for(i=0;i<sourceKeys.length;i++){key=sourceKeys[i];if(excluded.indexOf(key)>=0)continue;target[key]=source[key]}return target}var ButtonGroup=_react.default.forwardRef(function(_param,ref){var variant=_param.variant,size=_param.size,color=_param.color,fullWidth=_param.fullWidth,ripple=_param.ripple,className=_param.className,children=_param.children,rest=_objectWithoutProperties(_param,["variant","size","color","fullWidth","ripple","className","children"]);var buttonGroup=(0,_theme.useTheme)().buttonGroup;var defaultProps=buttonGroup.defaultProps,styles=buttonGroup.styles,valid=buttonGroup.valid;var base=styles.base,dividerColor=styles.dividerColor;variant=variant!==null&&variant!==void 0?variant:defaultProps.variant;size=size!==null&&size!==void 0?size:defaultProps.size;color=color!==null&&color!==void 0?color:defaultProps.color;ripple=ripple!==null&&ripple!==void 0?ripple:defaultProps.ripple;fullWidth=fullWidth!==null&&fullWidth!==void 0?fullWidth:defaultProps.fullWidth;className=(0,_tailwindMerge.twMerge)(defaultProps.className||"",className);var _obj;var classes=(0,_tailwindMerge.twMerge)((0,_classnames.default)((0,_objectsToString.default)(base.initial),(_obj={},_defineProperty(_obj,(0,_objectsToString.default)(base.fullWidth),fullWidth),_defineProperty(_obj,"divide-x",variant!=="outlined"),_defineProperty(_obj,(0,_objectsToString.default)(dividerColor[(0,_findMatch.default)(valid.colors,color,"gray")]),variant!=="outlined"),_obj)),className);return _react.default.createElement("div",_extends({},rest,{ref:ref,className:classes}),_react.default.Children.map(children,function(child,index){var _child_props;return _react.default.isValidElement(child)&&_react.default.cloneElement(child,{variant:variant,size:size,color:color,ripple:ripple,fullWidth:fullWidth,className:(0,_tailwindMerge.twMerge)((0,_classnames.default)({"rounded-r-none":index!==_react.default.Children.count(children)-1,"border-r-0":index!==_react.default.Children.count(children)-1,"rounded-l-none":index!==0}),(_child_props=child.props)===null||_child_props===void 0?void 0:_child_props.className)})}))});ButtonGroup.propTypes={variant:_propTypes.default.oneOf(_button.propTypesVariant),size:_propTypes.default.oneOf(_button.propTypesSize),color:_propTypes.default.oneOf(_button.propTypesColor),fullWidth:_button.propTypesFullWidth,ripple:_button.propTypesRipple,className:_button.propTypesClassName,children:_button.propTypesChildren};ButtonGroup.displayName="MaterialTailwind.ButtonGroup";var _default=ButtonGroup;
+
+/***/ }),
+
+/***/ "./node_modules/@material-tailwind/react/components/Button/index.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@material-tailwind/react/components/Button/index.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", ({value:true}));function _export(target,all){for(var name in all)Object.defineProperty(target,name,{enumerable:true,get:all[name]})}_export(exports,{Button:function(){return Button},default:function(){return _default}});var _react=_interopRequireDefault(__webpack_require__(/*! react */ "react"));var _propTypes=_interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));var _materialRippleEffects=_interopRequireDefault(__webpack_require__(/*! material-ripple-effects */ "./node_modules/material-ripple-effects/index.js"));var _classnames=_interopRequireDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));var _tailwindMerge=__webpack_require__(/*! tailwind-merge */ "./node_modules/tailwind-merge/dist/index.js");var _findMatch=_interopRequireDefault(__webpack_require__(/*! ../../utils/findMatch */ "./node_modules/@material-tailwind/react/utils/findMatch.js"));var _objectsToString=_interopRequireDefault(__webpack_require__(/*! ../../utils/objectsToString */ "./node_modules/@material-tailwind/react/utils/objectsToString.js"));var _theme=__webpack_require__(/*! ../../context/theme */ "./node_modules/@material-tailwind/react/context/theme.js");var _spinner=_interopRequireDefault(__webpack_require__(/*! ../Spinner */ "./node_modules/@material-tailwind/react/components/Spinner/index.js"));var _button=__webpack_require__(/*! ../../types/components/button */ "./node_modules/@material-tailwind/react/types/components/button.js");function _defineProperty(obj,key,value){if(key in obj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true})}else{obj[key]=value}return obj}function _extends(){_extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key]}}}return target};return _extends.apply(this,arguments)}function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function _objectWithoutProperties(source,excluded){if(source==null)return{};var target=_objectWithoutPropertiesLoose(source,excluded);var key,i;if(Object.getOwnPropertySymbols){var sourceSymbolKeys=Object.getOwnPropertySymbols(source);for(i=0;i<sourceSymbolKeys.length;i++){key=sourceSymbolKeys[i];if(excluded.indexOf(key)>=0)continue;if(!Object.prototype.propertyIsEnumerable.call(source,key))continue;target[key]=source[key]}}return target}function _objectWithoutPropertiesLoose(source,excluded){if(source==null)return{};var target={};var sourceKeys=Object.keys(source);var key,i;for(i=0;i<sourceKeys.length;i++){key=sourceKeys[i];if(excluded.indexOf(key)>=0)continue;target[key]=source[key]}return target}var Button=_react.default.forwardRef(function(_param,ref){var variant=_param.variant,size=_param.size,color=_param.color,fullWidth=_param.fullWidth,ripple=_param.ripple,className=_param.className,children=_param.children,loading=_param.loading,rest=_objectWithoutProperties(_param,["variant","size","color","fullWidth","ripple","className","children","loading"]);var button=(0,_theme.useTheme)().button;var valid=button.valid,defaultProps=button.defaultProps,styles=button.styles;var base=styles.base,variants=styles.variants,sizes=styles.sizes;variant=variant!==null&&variant!==void 0?variant:defaultProps.variant;size=size!==null&&size!==void 0?size:defaultProps.size;color=color!==null&&color!==void 0?color:defaultProps.color;fullWidth=fullWidth!==null&&fullWidth!==void 0?fullWidth:defaultProps.fullWidth;ripple=ripple!==null&&ripple!==void 0?ripple:defaultProps.ripple;className=(0,_tailwindMerge.twMerge)(defaultProps.className||"",className);var rippleEffect=ripple!==undefined&&new _materialRippleEffects.default;var buttonBase=(0,_objectsToString.default)(base.initial);var buttonVariant=(0,_objectsToString.default)(variants[(0,_findMatch.default)(valid.variants,variant,"filled")][(0,_findMatch.default)(valid.colors,color,"gray")]);var buttonSize=(0,_objectsToString.default)(sizes[(0,_findMatch.default)(valid.sizes,size,"md")]);var classes=(0,_tailwindMerge.twMerge)((0,_classnames.default)(buttonBase,buttonSize,buttonVariant,_defineProperty({},(0,_objectsToString.default)(base.fullWidth),fullWidth),{"flex items-center gap-2":loading,"gap-3":size==="lg"}),className);var spinnerClass=(0,_tailwindMerge.twMerge)((0,_classnames.default)({"w-4 h-4":true,"w-5 h-5":size==="lg"}));var _rest_disabled;return _react.default.createElement("button",_extends({},rest,{disabled:(_rest_disabled=rest.disabled)!==null&&_rest_disabled!==void 0?_rest_disabled:loading,ref:ref,className:classes,type:rest.type||"button",onMouseDown:function(e){var onMouseDown=rest===null||rest===void 0?void 0:rest.onMouseDown;if(ripple){rippleEffect.create(e,(variant==="filled"||variant==="gradient")&&color!=="white"?"light":"dark")}return typeof onMouseDown==="function"&&onMouseDown(e)}}),loading&&_react.default.createElement(_spinner.default,{className:spinnerClass}),children)});Button.propTypes={variant:_propTypes.default.oneOf(_button.propTypesVariant),size:_propTypes.default.oneOf(_button.propTypesSize),color:_propTypes.default.oneOf(_button.propTypesColor),fullWidth:_button.propTypesFullWidth,ripple:_button.propTypesRipple,className:_button.propTypesClassName,children:_button.propTypesChildren,loading:_button.propTypesLoading};Button.displayName="MaterialTailwind.Button";var _default=Button;
 
 /***/ }),
 
@@ -4792,6 +4792,28 @@ Object.defineProperty(exports, "__esModule", ({value:true}));function _export(ta
 
 /***/ }),
 
+/***/ "./node_modules/@material-tailwind/react/theme/components/buttonGroup/buttonGroupDividerColor.js":
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/@material-tailwind/react/theme/components/buttonGroup/buttonGroupDividerColor.js ***!
+  \*******************************************************************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", ({value:true}));Object.defineProperty(exports, "default", ({enumerable:true,get:function(){return _default}}));var buttonGroupDividerColor={white:{divideColor:"divide-blue-gray-50"},black:{divideColor:"divide-gray-800"},"blue-gray":{divideColor:"divide-blue-gray-600"},gray:{divideColor:"divide-gray-800"},brown:{divideColor:"divide-brown-600"},"deep-orange":{divideColor:"divide-deep-orange-600"},orange:{divideColor:"divide-orange-600"},amber:{divideColor:"divide-amber-600"},yellow:{divideColor:"divide-yellow-600"},lime:{divideColor:"divide-lime-600"},"light-green":{divideColor:"divide-light-green-600"},green:{divideColor:"divide-green-600"},teal:{divideColor:"divide-teal-600"},cyan:{divideColor:"divide-cyan-600"},"light-blue":{divideColor:"divide-light-blue-600"},blue:{divideColor:"divide-blue-600"},indigo:{divideColor:"divide-indigo-600"},"deep-purple":{divideColor:"divide-deep-purple-600"},purple:{divideColor:"divide-purple-600"},pink:{divideColor:"divide-pink-600"},red:{divideColor:"divide-red-600"}};var _default=buttonGroupDividerColor;
+
+/***/ }),
+
+/***/ "./node_modules/@material-tailwind/react/theme/components/buttonGroup/index.js":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/@material-tailwind/react/theme/components/buttonGroup/index.js ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", ({value:true}));function _export(target,all){for(var name in all)Object.defineProperty(target,name,{enumerable:true,get:all[name]})}_export(exports,{buttonGroup:function(){return buttonGroup},default:function(){return _default}});var _buttonGroupDividerColor=_interopRequireDefault(__webpack_require__(/*! ./buttonGroupDividerColor */ "./node_modules/@material-tailwind/react/theme/components/buttonGroup/buttonGroupDividerColor.js"));var _button=__webpack_require__(/*! ../../../types/components/button */ "./node_modules/@material-tailwind/react/types/components/button.js");function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}var buttonGroup={defaultProps:{variant:"filled",size:"md",color:"gray",fullWidth:false,ripple:true,className:""},valid:{variants:_button.propTypesVariant,sizes:_button.propTypesSize,colors:_button.propTypesColor},styles:{base:{initial:{display:"flex",flexDirection:"row"},fullWidth:{width:"w-full"}},dividerColor:_buttonGroupDividerColor.default}};var _default=buttonGroup;
+
+/***/ }),
+
 /***/ "./node_modules/@material-tailwind/react/theme/components/button/buttonFilled.js":
 /*!***************************************************************************************!*\
   !*** ./node_modules/@material-tailwind/react/theme/components/button/buttonFilled.js ***!
@@ -4844,28 +4866,6 @@ Object.defineProperty(exports, "__esModule", ({value:true}));Object.defineProper
 
 "use strict";
 Object.defineProperty(exports, "__esModule", ({value:true}));function _export(target,all){for(var name in all)Object.defineProperty(target,name,{enumerable:true,get:all[name]})}_export(exports,{button:function(){return button},default:function(){return _default}});var _buttonFilled=_interopRequireDefault(__webpack_require__(/*! ./buttonFilled */ "./node_modules/@material-tailwind/react/theme/components/button/buttonFilled.js"));var _buttonGradient=_interopRequireDefault(__webpack_require__(/*! ./buttonGradient */ "./node_modules/@material-tailwind/react/theme/components/button/buttonGradient.js"));var _buttonOutlined=_interopRequireDefault(__webpack_require__(/*! ./buttonOutlined */ "./node_modules/@material-tailwind/react/theme/components/button/buttonOutlined.js"));var _buttonText=_interopRequireDefault(__webpack_require__(/*! ./buttonText */ "./node_modules/@material-tailwind/react/theme/components/button/buttonText.js"));var _button=__webpack_require__(/*! ../../../types/components/button */ "./node_modules/@material-tailwind/react/types/components/button.js");function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}var button={defaultProps:{variant:"filled",size:"md",color:"gray",fullWidth:false,ripple:true,className:""},valid:{variants:_button.propTypesVariant,sizes:_button.propTypesSize,colors:_button.propTypesColor},styles:{base:{initial:{verticalAlign:"align-middle",userSelect:"select-none",fontFamily:"font-sans",fontWeight:"font-bold",textAlign:"text-center",textTransform:"uppercase",transition:"transition-all",disabled:"disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none"},fullWidth:{display:"block",width:"w-full"}},sizes:{sm:{fontSize:"text-xs",py:"py-2",px:"px-4",borderRadius:"rounded-lg"},md:{fontSize:"text-xs",py:"py-3",px:"px-6",borderRadius:"rounded-lg"},lg:{fontSize:"text-sm",py:"py-3.5",px:"px-7",borderRadius:"rounded-lg"}},variants:{filled:_buttonFilled.default,gradient:_buttonGradient.default,outlined:_buttonOutlined.default,text:_buttonText.default}}};var _default=button;
-
-/***/ }),
-
-/***/ "./node_modules/@material-tailwind/react/theme/components/buttonGroup/buttonGroupDividerColor.js":
-/*!*******************************************************************************************************!*\
-  !*** ./node_modules/@material-tailwind/react/theme/components/buttonGroup/buttonGroupDividerColor.js ***!
-  \*******************************************************************************************************/
-/***/ ((__unused_webpack_module, exports) => {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", ({value:true}));Object.defineProperty(exports, "default", ({enumerable:true,get:function(){return _default}}));var buttonGroupDividerColor={white:{divideColor:"divide-blue-gray-50"},black:{divideColor:"divide-gray-800"},"blue-gray":{divideColor:"divide-blue-gray-600"},gray:{divideColor:"divide-gray-800"},brown:{divideColor:"divide-brown-600"},"deep-orange":{divideColor:"divide-deep-orange-600"},orange:{divideColor:"divide-orange-600"},amber:{divideColor:"divide-amber-600"},yellow:{divideColor:"divide-yellow-600"},lime:{divideColor:"divide-lime-600"},"light-green":{divideColor:"divide-light-green-600"},green:{divideColor:"divide-green-600"},teal:{divideColor:"divide-teal-600"},cyan:{divideColor:"divide-cyan-600"},"light-blue":{divideColor:"divide-light-blue-600"},blue:{divideColor:"divide-blue-600"},indigo:{divideColor:"divide-indigo-600"},"deep-purple":{divideColor:"divide-deep-purple-600"},purple:{divideColor:"divide-purple-600"},pink:{divideColor:"divide-pink-600"},red:{divideColor:"divide-red-600"}};var _default=buttonGroupDividerColor;
-
-/***/ }),
-
-/***/ "./node_modules/@material-tailwind/react/theme/components/buttonGroup/index.js":
-/*!*************************************************************************************!*\
-  !*** ./node_modules/@material-tailwind/react/theme/components/buttonGroup/index.js ***!
-  \*************************************************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", ({value:true}));function _export(target,all){for(var name in all)Object.defineProperty(target,name,{enumerable:true,get:all[name]})}_export(exports,{buttonGroup:function(){return buttonGroup},default:function(){return _default}});var _buttonGroupDividerColor=_interopRequireDefault(__webpack_require__(/*! ./buttonGroupDividerColor */ "./node_modules/@material-tailwind/react/theme/components/buttonGroup/buttonGroupDividerColor.js"));var _button=__webpack_require__(/*! ../../../types/components/button */ "./node_modules/@material-tailwind/react/types/components/button.js");function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}var buttonGroup={defaultProps:{variant:"filled",size:"md",color:"gray",fullWidth:false,ripple:true,className:""},valid:{variants:_button.propTypesVariant,sizes:_button.propTypesSize,colors:_button.propTypesColor},styles:{base:{initial:{display:"flex",flexDirection:"row"},fullWidth:{width:"w-full"}},dividerColor:_buttonGroupDividerColor.default}};var _default=buttonGroup;
 
 /***/ }),
 
@@ -15325,10 +15325,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_ViewRecords__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/ViewRecords */ "./src/components/ViewRecords.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var _routes_root__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./routes/root */ "./src/routes/root.jsx");
-/* harmony import */ var _routes_contact__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./routes/contact */ "./src/routes/contact.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _routes_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./routes/root */ "./src/routes/root.jsx");
+/* harmony import */ var _routes_contact__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./routes/contact */ "./src/routes/contact.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 // import { CardBox } from "./CardBox";
 
@@ -15337,19 +15340,88 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const router = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.createBrowserRouter)([{
-  path: "/wp-admin/admin.php",
-  element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_routes_root__WEBPACK_IMPORTED_MODULE_2__["default"], {})
-}, {
-  path: "/admin.php?page=add-book-record",
-  element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_routes_contact__WEBPACK_IMPORTED_MODULE_3__["default"], {})
-}]);
+
+// function wpMenu() {
+//     return
+// }
+
 function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.RouterProvider, {
-    router: router
-  })
-  // <Root/>
-  ;
+  // const [Location, setLocation] = useState(location.search);
+  const [matchedRoutes, setMatchedRoutes] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)([]);
+  const routes = [{
+    path: "book-manager",
+    element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_routes_root__WEBPACK_IMPORTED_MODULE_3__["default"], {}),
+    exact: true
+  }, {
+    path: "add-book-record",
+    element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_routes_contact__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+  }];
+  const mainMenu = document.getElementById('toplevel_page_book-manager');
+  mainMenu.innerText = '';
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.BrowserRouter, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("nav", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("ul", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
+                to: "/wp-admin/admin.php?page=book-manager",
+                children: "Home"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
+                to: "/wp-admin/admin.php?page=add-book-record",
+                children: "Add Records"
+              })
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Routes, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+            path: "/*",
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_routes_root__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+          })
+        })]
+      }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createPortal)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("li", {
+        class: "wp-has-submenu wp-has-current-submenu wp-menu-open menu-top toplevel_page_book-manager",
+        id: "toplevel_page_book-manager",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
+          to: "/wp-admin/admin.php?page=book-manager",
+          className: "wp-has-submenu wp-has-current-submenu wp-menu-open menu-top toplevel_page_book-manager",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            class: "wp-menu-arrow",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            class: "wp-menu-image dashicons-before dashicons-book",
+            "aria-hidden": "true",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            class: "wp-menu-name",
+            children: "Book Records"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("ul", {
+          class: "wp-submenu wp-submenu-wrap",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+            class: "wp-submenu-head",
+            "aria-hidden": "true",
+            children: "Book Records"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+            class: "wp-first-item current",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
+              to: "/wp-admin/admin.php?page=book-manager",
+              "aria-current": "page",
+              className: "wp-first-item current",
+              children: "Book Records"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
+              to: "/wp-admin/admin.php?page=add-book-record",
+              children: "Add Record"
+            })
+          })]
+        })]
+      }), mainMenu)]
+    })
+  });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
@@ -15496,58 +15568,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Root)
 /* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/@remix-run/router/dist/router.js");
 
 function Root() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-      id: "sidebar",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
-        children: "React Router Contacts"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("form", {
-          id: "search-form",
-          role: "search",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("input", {
-            id: "q",
-            "aria-label": "Search contacts",
-            placeholder: "Search",
-            type: "search",
-            name: "q"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-            id: "search-spinner",
-            "aria-hidden": true,
-            hidden: true
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-            className: "sr-only",
-            "aria-live": "polite"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("form", {
-          method: "post",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
-            type: "submit",
-            children: "New"
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("nav", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-              href: `/contacts/1`,
-              children: "Your Name"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-              href: `/contacts/2`,
-              children: "Your Friend"
-            })
-          })]
-        })
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-      id: "detail"
-    })]
-  });
+  const location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_0__.useLocation)();
+  const match = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_1__.matchPath)({
+    path: '/wp-admin/admin.php',
+    exact: true
+  }, location.pathname);
+  const page = new URLSearchParams(location.search).get('page');
+  console.log(page);
+  switch (page) {
+    case 'book-manager':
+      return '<HomePage />';
+    case 'add-book-record':
+      return '<SettingsPage />';
+  }
 }
 
 /***/ }),
