@@ -71,10 +71,12 @@ class Book_Manager_Admin
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+
+		$menus = ['book-records_page_add-book-record','toplevel_page_book-manager'];
 		
-		// if ('toplevel_page_book-manager' !== $admin_page) {
-		// 	return;
-		// }
+		if ( !in_array( $admin_page, $menus ) ) {
+			return;
+		}
 		
 		$asset_file = BKM_ADDONS_PATH . 'build/index.asset.php';
 
