@@ -98,11 +98,11 @@ trait Book_Manager_Common
         global $wpdb;
 
         $table = $wpdb->prefix . BKM_DB_TABLE;
-
+        
         return $wpdb->delete(
             $table,
             ['book_id' => $id ],
-            ['%s']
+            ['%d']
         );
 
     }

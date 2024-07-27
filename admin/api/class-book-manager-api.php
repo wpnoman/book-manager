@@ -77,12 +77,12 @@ class Book_Manager_API
 
     public function delete_book_record( \WP_REST_Request $request ){
 
-        $record_id = isset($request->get_params()['id']);
+        $record_id = isset($request->get_params()['id']) ? $request->get_params()['id'] : '';
 
         if( empty($record_id) )
             return new \WP_REST_Response( ['status' => 'error', 'message' => 'Paramiter `ID` is Missing..' ], 400); 
         
 
-        return new \WP_REST_Response($this->delete_record($record_id), 204);
+        return new \WP_REST_Response( $this->delete_record($record_id), 200);
     }
 }

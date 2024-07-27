@@ -1,5 +1,5 @@
 import { Card, Typography, Button } from "@material-tailwind/react";
-import { getRecords } from "../api/apiQuery";
+import { deleteRecord, getRecords } from "../api/apiQuery";
 import { useEffect, useState } from "@wordpress/element";
 
 
@@ -18,6 +18,16 @@ export function ViewRecords() {
     });
 
   }, []);
+
+  /// delete item
+  const deleteItem = (book_id, e) => {
+    deleteRecord(book_id).then((res) => {
+      if( res == true ){
+        console.log('Item Deleted');
+        e.target.closest('tr').remove()
+      }
+    });
+  }
 
 
   return (
@@ -111,7 +121,7 @@ export function ViewRecords() {
 
                 <td className={classes}>
                   <div className="flex gap-4">
-                    <Button color="red">Delete</Button>
+                    <Button color="red" onClick={(e) => deleteItem(book_id, e)}>Delete</Button>
                     <Button>Edit</Button>
                   </div>
                 </td>

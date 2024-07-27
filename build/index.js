@@ -15423,6 +15423,7 @@ function App() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   CreateRecord: () => (/* binding */ CreateRecord),
+/* harmony export */   deleteRecord: () => (/* binding */ deleteRecord),
 /* harmony export */   getRecords: () => (/* binding */ getRecords)
 /* harmony export */ });
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/api-fetch */ "@wordpress/api-fetch");
@@ -15463,6 +15464,18 @@ function getRecords(page = 1) {
   return _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0___default()({
     path: (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_1__.addQueryArgs)('/book-manager/v1/book-records', queryParams),
     method: 'GET'
+  }).then(res => {
+    return res;
+  });
+}
+function deleteRecord(book_id) {
+  // get records
+  return _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0___default()({
+    path: '/book-manager/v1/delete-record',
+    method: 'POST',
+    data: {
+      id: book_id
+    }
   }).then(res => {
     return res;
   });
@@ -15702,6 +15715,16 @@ function ViewRecords() {
       setTableRows(res);
     });
   }, []);
+
+  /// delete item
+  const deleteItem = (book_id, e) => {
+    (0,_api_apiQuery__WEBPACK_IMPORTED_MODULE_1__.deleteRecord)(book_id).then(res => {
+      if (res == true) {
+        console.log('Item Deleted');
+        e.target.closest('tr').remove();
+      }
+    });
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_0__.Card, {
     className: "h-full w-full overflow-scroll mt-4",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
@@ -15784,6 +15807,7 @@ function ViewRecords() {
                 className: "flex gap-4",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_0__.Button, {
                   color: "red",
+                  onClick: e => deleteItem(book_id, e),
                   children: "Delete"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_0__.Button, {
                   children: "Edit"
