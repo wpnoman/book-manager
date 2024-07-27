@@ -1,51 +1,25 @@
 import { Card, Typography, Button } from "@material-tailwind/react";
+import { getRecords } from "../api/apiQuery";
+import { useEffect, useState } from "@wordpress/element";
 
-const TABLE_HEAD = ["id", "Title", "Author", "Publisher", "ISBN", "Publication", "Action"];
-
-const TABLE_ROWS = [
-  {
-    id:  11,
-    title: "John Michael",
-    author : "Manager",
-    publisher : "Manager",
-    isbn : 232302-23232-23234,
-    publication_date: "23/04/18",
-  },
-  {
-    id:  12,
-    title: "John Michael",
-    author : "Manager",
-    publisher : "Manager",
-    isbn : 232302-23232-23234,
-    publication_date: "23/04/18",
-  },
-  {
-    id:  13,
-    title: "John Michael",
-    author : "Manager",
-    publisher : "Manager",
-    isbn : 232302-23232-23234,
-    publication_date: "23/04/18",
-  },
-  {
-    id:  14,
-    title: "John Michael",
-    author : "Manager",
-    publisher : "Manager",
-    isbn : 232302-23232-23234,
-    publication_date: "23/04/18",
-  },
-  {
-    id:  15,
-    title: "John Michael",
-    author : "Manager",
-    publisher : "Manager",
-    isbn : 232302-23232-23234,
-    publication_date: "23/04/18",
-  },
-];
 
 export function ViewRecords() {
+
+  const [tableRows, setTableRows] = useState([]);
+
+  const TABLE_HEAD = ["id", "Title", "Author", "Publisher", "ISBN", "Publication", "Action"];
+
+
+  useEffect(() => {
+
+    // request api and update table data
+    getRecords().then((res) => {
+      setTableRows(res);
+    });
+
+  }, []);
+
+
   return (
     <Card className="h-full w-full overflow-scroll mt-4">
       <table className="w-full min-w-max table-auto text-left">
@@ -68,12 +42,12 @@ export function ViewRecords() {
           </tr>
         </thead>
         <tbody>
-          {TABLE_ROWS.map(({ id, title, author, publisher, isbn, publication_date }, index) => {
-            const isLast = index === TABLE_ROWS.length - 1;
+          {tableRows.map(({ book_id, title, author, publisher, ISBN, publication_date }, index) => {
+            const isLast = index === tableRows.length - 1;
             const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
 
             return (
-              <tr key={id}>
+              <tr key={book_id}>
 
                 <td className={classes}>
                   <Typography
@@ -81,7 +55,7 @@ export function ViewRecords() {
                     color="blue-gray"
                     className="font-normal"
                   >
-                    {id}
+                    {book_id}
                   </Typography>
                 </td>
 
@@ -121,7 +95,7 @@ export function ViewRecords() {
                     color="blue-gray"
                     className="font-normal"
                   >
-                    {isbn}
+                    {ISBN}
                   </Typography>
                 </td>
 

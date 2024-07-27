@@ -26,6 +26,7 @@
     "@wordpress/api-fetch": "^7.4.0",
     "@wordpress/dom-ready": "^4.4.0",
     "@wordpress/element": "^6.4.0",
+    "@wordpress/url": "^4.4.0",
     "react-router-dom": "^6.25.1",
     "sass-loader": "^16.0.0"
   },
