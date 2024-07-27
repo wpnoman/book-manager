@@ -37,12 +37,12 @@ function App() {
         <>
             <Router>
                 <div>
-                    <nav>
+                    {/* <nav>
                         <ul>
                             <li><Link to="/wp-admin/admin.php?page=book-manager">Home</Link></li>
                             <li><Link to="/wp-admin/admin.php?page=add-book-record">Add Records</Link></li>
                         </ul>
-                    </nav>
+                    </nav> */}
                     <Routes>
                         <Route path="/*" element={<Root />} />
                     </Routes>

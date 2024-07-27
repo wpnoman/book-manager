@@ -15360,27 +15360,13 @@ function App() {
   mainMenu.innerText = '';
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.BrowserRouter, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("nav", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("ul", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
-                to: "/wp-admin/admin.php?page=book-manager",
-                children: "Home"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
-                to: "/wp-admin/admin.php?page=add-book-record",
-                children: "Add Records"
-              })
-            })]
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Routes, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Routes, {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
             path: "/*",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_routes_root__WEBPACK_IMPORTED_MODULE_3__["default"], {})
           })
-        })]
+        })
       }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createPortal)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("li", {
         class: "wp-has-submenu wp-has-current-submenu wp-menu-open menu-top toplevel_page_book-manager",
         id: "toplevel_page_book-manager",
@@ -15443,37 +15429,52 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
-const TABLE_HEAD = ["Name", "Job", "Employed", ""];
+const TABLE_HEAD = ["id", "Title", "Author", "Publisher", "ISBN", "Publication", "Action"];
 const TABLE_ROWS = [{
-  name: "John Michael",
-  job: "Manager",
-  date: "23/04/18"
+  id: 11,
+  title: "John Michael",
+  author: "Manager",
+  publisher: "Manager",
+  isbn: 232302 - 23232 - 23234,
+  publication_date: "23/04/18"
 }, {
-  name: "Alexa Liras",
-  job: "Developer",
-  date: "23/04/18"
+  id: 12,
+  title: "John Michael",
+  author: "Manager",
+  publisher: "Manager",
+  isbn: 232302 - 23232 - 23234,
+  publication_date: "23/04/18"
 }, {
-  name: "Laurent Perrier",
-  job: "Executive",
-  date: "19/09/17"
+  id: 13,
+  title: "John Michael",
+  author: "Manager",
+  publisher: "Manager",
+  isbn: 232302 - 23232 - 23234,
+  publication_date: "23/04/18"
 }, {
-  name: "Michael Levi",
-  job: "Developer",
-  date: "24/12/08"
+  id: 14,
+  title: "John Michael",
+  author: "Manager",
+  publisher: "Manager",
+  isbn: 232302 - 23232 - 23234,
+  publication_date: "23/04/18"
 }, {
-  name: "Richard Gran",
-  job: "Manager",
-  date: "04/10/21"
+  id: 15,
+  title: "John Michael",
+  author: "Manager",
+  publisher: "Manager",
+  isbn: 232302 - 23232 - 23234,
+  publication_date: "23/04/18"
 }];
 function ViewRecords() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_0__.Card, {
-    className: "h-full w-full overflow-scroll",
+    className: "h-full w-full overflow-scroll mt-4",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("table", {
       className: "w-full min-w-max table-auto text-left",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("thead", {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tr", {
           children: TABLE_HEAD.map(head => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
-            className: "border-b border-blue-gray-100 bg-blue-gray-50 p-4",
+            className: "border-b border-blue-gray-100 bg-neutral-950 text-white p-4",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_0__.Typography, {
               variant: "small",
               color: "blue-gray",
@@ -15484,9 +15485,12 @@ function ViewRecords() {
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tbody", {
         children: TABLE_ROWS.map(({
-          name,
-          job,
-          date
+          id,
+          title,
+          author,
+          publisher,
+          isbn,
+          publication_date
         }, index) => {
           const isLast = index === TABLE_ROWS.length - 1;
           const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
@@ -15497,7 +15501,7 @@ function ViewRecords() {
                 variant: "small",
                 color: "blue-gray",
                 className: "font-normal",
-                children: name
+                children: id
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
               className: classes,
@@ -15505,7 +15509,7 @@ function ViewRecords() {
                 variant: "small",
                 color: "blue-gray",
                 className: "font-normal",
-                children: job
+                children: title
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
               className: classes,
@@ -15513,23 +15517,160 @@ function ViewRecords() {
                 variant: "small",
                 color: "blue-gray",
                 className: "font-normal",
-                children: date
+                children: author
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
               className: classes,
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_0__.Typography, {
-                as: "a",
-                href: "#",
                 variant: "small",
                 color: "blue-gray",
-                className: "font-medium",
-                children: "Edit"
+                className: "font-normal",
+                children: publisher
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+              className: classes,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_0__.Typography, {
+                variant: "small",
+                color: "blue-gray",
+                className: "font-normal",
+                children: isbn
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+              className: classes,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_0__.Typography, {
+                variant: "small",
+                color: "blue-gray",
+                className: "font-normal",
+                children: publication_date
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+              className: classes,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "flex gap-4",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_0__.Button, {
+                  color: "red",
+                  children: "Delete"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_0__.Button, {
+                  children: "Edit"
+                })]
               })
             })]
-          }, name);
+          }, id);
         })
       })]
     })
+  });
+}
+
+/***/ }),
+
+/***/ "./src/routes/BookManager.jsx":
+/*!************************************!*\
+  !*** ./src/routes/BookManager.jsx ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ BookManager)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_ViewRecords__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/ViewRecords */ "./src/components/ViewRecords.jsx");
+/* harmony import */ var _Pagination__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Pagination */ "./src/routes/Pagination.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function BookManager() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+      class: "text-9xl font-bold",
+      children: "All Book Records"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_ViewRecords__WEBPACK_IMPORTED_MODULE_1__.ViewRecords, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Pagination__WEBPACK_IMPORTED_MODULE_2__.Pagination, {})]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/routes/Pagination.jsx":
+/*!***********************************!*\
+  !*** ./src/routes/Pagination.jsx ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Pagination: () => (/* binding */ Pagination)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_tailwind_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-tailwind/react */ "./node_modules/@material-tailwind/react/index.js");
+/* harmony import */ var _material_tailwind_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _heroicons_react_24_outline__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @heroicons/react/24/outline */ "./node_modules/@heroicons/react/24/outline/esm/ArrowLeftIcon.js");
+/* harmony import */ var _heroicons_react_24_outline__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @heroicons/react/24/outline */ "./node_modules/@heroicons/react/24/outline/esm/ArrowRightIcon.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function Pagination() {
+  const [active, setActive] = react__WEBPACK_IMPORTED_MODULE_0___default().useState(1);
+  const getItemProps = index => ({
+    variant: active === index ? "filled" : "text",
+    color: "gray",
+    onClick: () => setActive(index)
+  });
+  const next = () => {
+    if (active === 5) return;
+    setActive(active + 1);
+  };
+  const prev = () => {
+    if (active === 1) return;
+    setActive(active - 1);
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "flex items-center gap-4 mt-4",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_1__.Button, {
+      variant: "text",
+      className: "flex items-center gap-2",
+      onClick: prev,
+      disabled: active === 1,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_heroicons_react_24_outline__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        strokeWidth: 2,
+        className: "h-4 w-4"
+      }), " Previous"]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "flex items-center gap-2",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_1__.IconButton, {
+        ...getItemProps(1),
+        children: "1"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_1__.IconButton, {
+        ...getItemProps(2),
+        children: "2"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_1__.IconButton, {
+        ...getItemProps(3),
+        children: "3"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_1__.IconButton, {
+        ...getItemProps(4),
+        children: "4"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_1__.IconButton, {
+        ...getItemProps(5),
+        children: "5"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_1__.Button, {
+      variant: "text",
+      className: "flex items-center gap-2",
+      onClick: next,
+      disabled: active === 5,
+      children: ["Next", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_heroicons_react_24_outline__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        strokeWidth: 2,
+        className: "h-4 w-4"
+      })]
+    })]
   });
 }
 
@@ -15568,20 +15709,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Root)
 /* harmony export */ });
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/@remix-run/router/dist/router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/@remix-run/router/dist/router.js");
+/* harmony import */ var _BookManager__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BookManager */ "./src/routes/BookManager.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 
 function Root() {
-  const location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_0__.useLocation)();
-  const match = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_1__.matchPath)({
+  const location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useLocation)();
+  const match = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.matchPath)({
     path: '/wp-admin/admin.php',
     exact: true
   }, location.pathname);
   const page = new URLSearchParams(location.search).get('page');
-  console.log(page);
   switch (page) {
     case 'book-manager':
-      return '<HomePage />';
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_BookManager__WEBPACK_IMPORTED_MODULE_0__["default"], {});
     case 'add-book-record':
       return '<SettingsPage />';
   }
@@ -36646,6 +36790,88 @@ function rectToClientRect(rect) {
 
 
 
+
+/***/ }),
+
+/***/ "./node_modules/@heroicons/react/24/outline/esm/ArrowLeftIcon.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@heroicons/react/24/outline/esm/ArrowLeftIcon.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+
+function ArrowLeftIcon({
+  title,
+  titleId,
+  ...props
+}, svgRef) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", Object.assign({
+    xmlns: "http://www.w3.org/2000/svg",
+    fill: "none",
+    viewBox: "0 0 24 24",
+    strokeWidth: 1.5,
+    stroke: "currentColor",
+    "aria-hidden": "true",
+    "data-slot": "icon",
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("title", {
+    id: titleId
+  }, title) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    d: "M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+  }));
+}
+const ForwardRef = /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(ArrowLeftIcon);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ForwardRef);
+
+/***/ }),
+
+/***/ "./node_modules/@heroicons/react/24/outline/esm/ArrowRightIcon.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@heroicons/react/24/outline/esm/ArrowRightIcon.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+
+function ArrowRightIcon({
+  title,
+  titleId,
+  ...props
+}, svgRef) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", Object.assign({
+    xmlns: "http://www.w3.org/2000/svg",
+    fill: "none",
+    viewBox: "0 0 24 24",
+    strokeWidth: 1.5,
+    stroke: "currentColor",
+    "aria-hidden": "true",
+    "data-slot": "icon",
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("title", {
+    id: titleId
+  }, title) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    d: "M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+  }));
+}
+const ForwardRef = /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(ArrowRightIcon);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ForwardRef);
 
 /***/ }),
 

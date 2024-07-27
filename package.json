@@ -21,6 +21,7 @@
   "author": "",
   "license": "GPL-3.0",
   "dependencies": {
+    "@heroicons/react": "^2.1.5",
     "@material-tailwind/react": "^2.1.9",
     "@wordpress/dom-ready": "^4.4.0",
     "@wordpress/element": "^6.4.0",
