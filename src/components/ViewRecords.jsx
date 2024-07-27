@@ -1,33 +1,24 @@
 import { Card, Typography, Button } from "@material-tailwind/react";
-import { deleteRecord, getRecords } from "../api/apiQuery";
-import { useEffect, useState } from "@wordpress/element";
+import { deleteRecord } from "../api/apiQuery";
 
 
-export function ViewRecords() {
 
-  const [tableRows, setTableRows] = useState([]);
+export function ViewRecords({tableRows}) {
+
+  
 
   const TABLE_HEAD = ["id", "Title", "Author", "Publisher", "ISBN", "Publication", "Action"];
 
 
-  useEffect(() => {
-
-    // request api and update table data
-    getRecords().then((res) => {
-      setTableRows(res);
-    });
-
-  }, []);
-
-  /// delete item
-  const deleteItem = (book_id, e) => {
-    deleteRecord(book_id).then((res) => {
-      if( res == true ){
-        console.log('Item Deleted');
-        e.target.closest('tr').remove()
-      }
-    });
-  }
+/// delete item
+const deleteItem = (book_id, e) => {
+  deleteRecord(book_id).then((res) => {
+    if( res == true ){
+      console.log('Item Deleted');
+      e.target.closest('tr').remove()
+    }
+  });
+}
 
 
   return (
@@ -51,6 +42,7 @@ export function ViewRecords() {
             ))}
           </tr>
         </thead>
+
         <tbody>
           {tableRows.map(({ book_id, title, author, publisher, ISBN, publication_date }, index) => {
             const isLast = index === tableRows.length - 1;

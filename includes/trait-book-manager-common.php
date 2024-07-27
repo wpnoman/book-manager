@@ -82,15 +82,19 @@ trait Book_Manager_Common
 
         // set data for pagination
         $page = isset($request->get_params()['page']) ? intval($request->get_params()['page']) : 1;
-        $books_per_page = 10;
+        $books_per_page = 5;
         $offset = ($page - 1) * $books_per_page;
 
+        // results
         $table = $wpdb->prefix . BKM_DB_TABLE;
         $results = $wpdb->get_results(
             $wpdb->prepare("SELECT * FROM %i LIMIT %d OFFSET %d", $table, $books_per_page, $offset)
         );
 
-        return $results;
+        // pagination
+        $total_rows = $wpdb->get_var("SELECT COUNT(*) FROM {$table}");
+
+        return ['results'=>$results, 'max_page' => ceil($total_rows / $books_per_page) ];
     }
 
     public function delete_record($id)
