@@ -20,7 +20,7 @@ if (!defined('ABSPATH')) {
 
 
 /**
- * Define constance
+ * Define plugin constance
  */
 
 define('BKM_VERSION', '1.0.0');
@@ -51,9 +51,12 @@ function activate_book_manager()
 	require_once BKM_INCLUDE_PATH . 'class-book-manager-activator.php';
 	Book_Manager\includes\Book_Manager_Activator::activate();
 }
-
 register_activation_hook(__FILE__, 'activate_book_manager');
 
+
+/**
+ * Initialize the plugin
+ */
 if (!function_exists('bkm_Init')) {
 	function bkm_Init()
 	{

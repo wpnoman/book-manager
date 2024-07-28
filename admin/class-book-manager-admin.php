@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Admin Handler
+ *
+ * @since      1.0.0
+ *
+ * @package    Book_Manager
+ * @subpackage Book_manager/Admin
+ */
+
 namespace Book_manager\Admin;
 
 if (!defined('ABSPATH'))

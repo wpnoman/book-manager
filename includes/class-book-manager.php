@@ -1,9 +1,12 @@
 <?php
 
 /**
- * Book Mangaer 
+ * Plugin Initializer file
  *
- * @package Book_Manager
+ * @since      1.0.0
+ *
+ * @package    Book_Manager
+ * @subpackage Book_manager/includes
  */
 
 namespace Book_Manager\includes;
