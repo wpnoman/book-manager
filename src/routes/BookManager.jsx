@@ -9,25 +9,28 @@ import { useEffect, useState } from "@wordpress/element";
 export default function BookManager() {
 
     const [tableRows, setTableRows] = useState([]);
+    const [ maxPage, setMaxpage ] = useState(1);
+    const [ currentPage, setcurrentPage ] = useState(1);
 
     useEffect(() => {
 
         // request api and update table data
-        getRecords().then((res) => {
-          setTableRows(res.results);
+        getRecords(currentPage).then((res) => {
+            setTableRows(res.results);
+            setMaxpage(res.max_page)
+            // console.log(res.results.length, 'first')
         });
-        console.log('first')
-      }, []);
-    
+    }, [currentPage]);
+
 
     return (
         <>
             <h1 class="text-9xl font-bold">
                 All Book Records
             </h1>
-            <ViewRecords tableRows={tableRows}/>
+            <ViewRecords tableRows={tableRows} />
+            {maxPage > 0 && <Pagination maxPage={maxPage} setcurrentPage={setcurrentPage} />}
 
-            <Pagination/>
         </>
     )
 }
