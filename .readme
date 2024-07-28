@@ -12,7 +12,7 @@ Book record is a plugin which is developed with react in the Dashboard (FronEnd)
 = How To Install =
 As everything is bundeld and linked, It's ready to Test. You can setup the react enveronment just open the terminal this folder and run npm install. ( Make sure you have installed npm in your machine )
 
-** Note: We didn's use any Caching **
+** Note: We didn's use any Caching and Edit option is doesn't Work properly **
 
 
 === Thank you ===
