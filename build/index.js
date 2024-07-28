@@ -15861,7 +15861,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _api_apiQuery__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../api/apiQuery */ "./src/api/apiQuery.js");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _material_tailwind_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-tailwind/react */ "./node_modules/@material-tailwind/react/index.js");
+/* harmony import */ var _material_tailwind_react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -15873,7 +15876,7 @@ function BookManager() {
   const [tableRows, setTableRows] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useState)([]);
   const [maxPage, setMaxpage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useState)(1);
   const [currentPage, setcurrentPage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useState)(1);
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useEffect)(() => {
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useLayoutEffect)(() => {
     // request api and update table data
     (0,_api_apiQuery__WEBPACK_IMPORTED_MODULE_4__.getRecords)(currentPage).then(res => {
       setTableRows(res.results);
@@ -15881,13 +15884,24 @@ function BookManager() {
       // console.log(res.results.length, 'first')
     });
   }, [currentPage]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
-      class: "text-9xl font-bold",
-      children: "All Book Records"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_ViewRecords__WEBPACK_IMPORTED_MODULE_1__.ViewRecords, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      className: "flex justify-between",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h1", {
+        class: "text-9xl font-bold",
+        children: "All Book Records"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "search-form",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          className: "w-72",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_6__.Input, {
+            label: "Search"
+          })
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_ViewRecords__WEBPACK_IMPORTED_MODULE_1__.ViewRecords, {
       tableRows: tableRows
-    }), maxPage > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Pagination__WEBPACK_IMPORTED_MODULE_2__.Pagination, {
+    }), maxPage > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Pagination__WEBPACK_IMPORTED_MODULE_2__.Pagination, {
       maxPage: maxPage,
       setcurrentPage: setcurrentPage
     })]
