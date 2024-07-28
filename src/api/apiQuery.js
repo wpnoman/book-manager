@@ -29,7 +29,6 @@ export function getRecords(page = 1) {
 }
 
 export function deleteRecord(book_id) {
-
     // get records
     return apiFetch({
         path: '/book-manager/v1/delete-record',
@@ -38,5 +37,17 @@ export function deleteRecord(book_id) {
     }).then((res) => {
         return res;
     });
+}
 
+export function searchRecords( searchString ){
+
+    // qauery
+    const querrArg = { string:searchString };
+
+    return apiFetch({
+        path: addQueryArgs( '/book-manager/v1/search-records', querrArg),
+        method: 'GET'
+    }).then((res) => {
+        return res;
+    });
 }

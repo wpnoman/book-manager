@@ -15424,7 +15424,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   CreateRecord: () => (/* binding */ CreateRecord),
 /* harmony export */   deleteRecord: () => (/* binding */ deleteRecord),
-/* harmony export */   getRecords: () => (/* binding */ getRecords)
+/* harmony export */   getRecords: () => (/* binding */ getRecords),
+/* harmony export */   searchRecords: () => (/* binding */ searchRecords)
 /* harmony export */ });
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/api-fetch */ "@wordpress/api-fetch");
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0__);
@@ -15476,6 +15477,18 @@ function deleteRecord(book_id) {
     data: {
       id: book_id
     }
+  }).then(res => {
+    return res;
+  });
+}
+function searchRecords(searchString) {
+  // qauery
+  const querrArg = {
+    string: searchString
+  };
+  return _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0___default()({
+    path: (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_1__.addQueryArgs)('/book-manager/v1/search-records', querrArg),
+    method: 'GET'
   }).then(res => {
     return res;
   });
@@ -15876,14 +15889,22 @@ function BookManager() {
   const [tableRows, setTableRows] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useState)([]);
   const [maxPage, setMaxpage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useState)(1);
   const [currentPage, setcurrentPage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useState)(1);
+  const [searchString, setSearchString] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useState)('');
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useLayoutEffect)(() => {
-    // request api and update table data
-    (0,_api_apiQuery__WEBPACK_IMPORTED_MODULE_4__.getRecords)(currentPage).then(res => {
-      setTableRows(res.results);
-      setMaxpage(res.max_page);
-      // console.log(res.results.length, 'first')
-    });
-  }, [currentPage]);
+    if (searchString.length > 0) {
+      (0,_api_apiQuery__WEBPACK_IMPORTED_MODULE_4__.searchRecords)(searchString).then(res => {
+        setTableRows(res.results);
+        setMaxpage(res.max_page);
+      });
+    } else {
+      // request api and update table data
+      (0,_api_apiQuery__WEBPACK_IMPORTED_MODULE_4__.getRecords)(currentPage).then(res => {
+        setTableRows(res.results);
+        setMaxpage(res.max_page);
+        // console.log(res.results.length, 'first')
+      });
+    }
+  }, [currentPage, searchString]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
       className: "flex justify-between",
@@ -15895,6 +15916,9 @@ function BookManager() {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "w-72",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_6__.Input, {
+            onChange: e => {
+              setSearchString(e.target.value);
+            },
             label: "Search"
           })
         })
