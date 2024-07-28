@@ -23,7 +23,8 @@ trait Book_Manager_Common
     private $book_info = [];
     private $book_fields = array('title', 'author', 'publisher', 'ISBN', 'publication_date');
 
-
+    private $books_per_page = 5;
+    
     public function set($data)
     {
         return sanitize_text_field($data);
@@ -82,19 +83,18 @@ trait Book_Manager_Common
 
         // set data for pagination
         $page = isset($request->get_params()['page']) ? intval($request->get_params()['page']) : 1;
-        $books_per_page = 5;
-        $offset = ($page - 1) * $books_per_page;
+        $offset = ($page - 1) * $this->books_per_page;
 
         // results
         $table = $wpdb->prefix . BKM_DB_TABLE;
         $results = $wpdb->get_results(
-            $wpdb->prepare("SELECT * FROM %i LIMIT %d OFFSET %d", $table, $books_per_page, $offset)
+            $wpdb->prepare("SELECT * FROM %i LIMIT %d OFFSET %d", $table, $this->books_per_page, $offset)
         );
 
         // pagination
         $total_rows = $wpdb->get_var("SELECT COUNT(*) FROM {$table}");
 
-        return ['results'=>$results, 'max_page' => ceil($total_rows / $books_per_page) ];
+        return ['results'=>$results, 'max_page' => ceil($total_rows / $this->books_per_page) ];
     }
 
     public function delete_record($id)
@@ -109,5 +109,25 @@ trait Book_Manager_Common
             ['%d']
         );
 
+    }
+
+    public function search_record( $search_string ){
+
+        global $wpdb;
+
+        $table = $wpdb->prefix . BKM_DB_TABLE;
+        $title_like = '%' . $wpdb->esc_like( $search_string ) . '%';
+        $author_like = '%' . $wpdb->esc_like( $search_string ) . '%';
+        $isbn_like = '%' . $wpdb->esc_like( $search_string ) . '%';
+
+        $results =  $wpdb->get_results(
+            $wpdb->prepare("SELECT * FROM %i WHERE title LIKE %s OR author LIKE %s OR ISBN LIKE %s", $table, $title_like, $author_like, $isbn_like )
+        );
+
+        $max_page = $wpdb->get_var(
+            $wpdb->prepare("SELECT COUNT(*) FROM %i WHERE title LIKE %s OR author LIKE %s OR ISBN LIKE %s", $table,  $title_like, $author_like, $isbn_like)
+        );
+
+        return [ 'results' => $results, 'max_page' => ceil($max_page / $this->books_per_page) ];
     }
 }

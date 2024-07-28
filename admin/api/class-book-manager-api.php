@@ -44,6 +44,12 @@ class Book_Manager_API
             'methods'  => 'POST',
             'callback' => [$this, 'delete_book_record'],
         ]);
+
+        // Search API
+        register_rest_route('book-manager/v1', '/search-records', [
+            'methods'  => 'GET',
+            'callback' => [$this, 'search_records'],
+        ]);
     }
 
 
@@ -84,5 +90,16 @@ class Book_Manager_API
         
 
         return new \WP_REST_Response( $this->delete_record($record_id), 200);
+    }
+
+    public function search_records( \WP_REST_Request $request ){
+
+        $search_string = isset($request->get_params()['string']) ? $this->set($request->get_params()['string']) : '';
+
+        // return error on missing param
+        if( empty ( $search_string ))
+            return new \WP_REST_Response( ['status' => 'error', 'message' => 'Paramiter `string` is Missing..' ], 400); 
+
+        return new \WP_REST_Response( $this->search_record($search_string), 200); 
     }
 }
