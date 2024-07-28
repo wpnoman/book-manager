@@ -1,35 +1,16 @@
 import React from "react";
-// import { CardBox } from "./CardBox";
 import { ViewRecords } from "./components/ViewRecords";
-// import { Table } from "./Table";
 import { createPortal, useState } from "@wordpress/element";
-
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate, matchPath } from 'react-router-dom';
-
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Root from "./routes/root";
-import Contact from "./routes/contact";
 
-
-// function wpMenu() {
-//     return
-// }
 
 function App() {
 
     // const [Location, setLocation] = useState(location.search);
     const [matchedRoutes, setMatchedRoutes] = useState([]);
 
-    const routes = [
-        {
-            path: "book-manager",
-            element: <Root />,
-            exact: true,
-        },
-        {
-            path: "add-book-record",
-            element: <Contact />,
-        },
-    ];
+
     const mainMenu = document.getElementById('toplevel_page_book-manager');
     mainMenu.innerText = '';
 
@@ -57,7 +38,7 @@ function App() {
                                 <Link to="/wp-admin/admin.php?page=book-manager" aria-current="page" className="wp-first-item current">Book Records</Link>
                             </li>
                             <li>
-                                <Link to="/wp-admin/admin.php?page=add-book-record">Add Record</Link>
+                                <Link to="/wp-admin/admin.php?page=add-book-record">Add Records</Link>
                             </li>
                         </ul>
                     </li>, mainMenu

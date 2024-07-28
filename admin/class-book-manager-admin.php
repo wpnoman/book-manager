@@ -46,14 +46,6 @@ class Book_Manager_Admin
 			[$this, 'dashboard'],
 		);
 
-		add_submenu_page( 
-			'book-manager',
-			__( 'Edit Records', 'book-manager' ),
-			__( 'Edit Records', 'book-manager' ),
-			'manage_options',
-			'edit-book-record',
-			[$this, 'dashboard'],
-		);
 	}
 
 	/**

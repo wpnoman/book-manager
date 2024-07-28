@@ -19,11 +19,6 @@ export default function BookManager() {
     const currentUrl = window.location.href
     const {book_id} = getQueryArgs(currentUrl);
 
-    if( book_id ){
-        return <>
-            <EditRecord id={book_id}/>
-        </>
-    }
 
     useLayoutEffect(() => {
         if (searchString.length > 0) {
@@ -41,7 +36,11 @@ export default function BookManager() {
 
     }, [currentPage, searchString]);
 
-    
+    if( book_id ){
+        return <>
+            <EditRecord id={book_id}/>
+        </>
+    }
 
     return (
         <>
