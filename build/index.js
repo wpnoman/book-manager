@@ -3812,17 +3812,6 @@ Object.defineProperty(exports, "__esModule", ({value:true}));function _export(ta
 
 /***/ }),
 
-/***/ "./node_modules/@material-tailwind/react/components/ButtonGroup/index.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/@material-tailwind/react/components/ButtonGroup/index.js ***!
-  \*******************************************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", ({value:true}));function _export(target,all){for(var name in all)Object.defineProperty(target,name,{enumerable:true,get:all[name]})}_export(exports,{ButtonGroup:function(){return ButtonGroup},default:function(){return _default}});var _react=_interopRequireDefault(__webpack_require__(/*! react */ "react"));var _propTypes=_interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));var _classnames=_interopRequireDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));var _tailwindMerge=__webpack_require__(/*! tailwind-merge */ "./node_modules/tailwind-merge/dist/index.js");var _findMatch=_interopRequireDefault(__webpack_require__(/*! ../../utils/findMatch */ "./node_modules/@material-tailwind/react/utils/findMatch.js"));var _objectsToString=_interopRequireDefault(__webpack_require__(/*! ../../utils/objectsToString */ "./node_modules/@material-tailwind/react/utils/objectsToString.js"));var _theme=__webpack_require__(/*! ../../context/theme */ "./node_modules/@material-tailwind/react/context/theme.js");var _button=__webpack_require__(/*! ../../types/components/button */ "./node_modules/@material-tailwind/react/types/components/button.js");function _defineProperty(obj,key,value){if(key in obj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true})}else{obj[key]=value}return obj}function _extends(){_extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key]}}}return target};return _extends.apply(this,arguments)}function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function _objectWithoutProperties(source,excluded){if(source==null)return{};var target=_objectWithoutPropertiesLoose(source,excluded);var key,i;if(Object.getOwnPropertySymbols){var sourceSymbolKeys=Object.getOwnPropertySymbols(source);for(i=0;i<sourceSymbolKeys.length;i++){key=sourceSymbolKeys[i];if(excluded.indexOf(key)>=0)continue;if(!Object.prototype.propertyIsEnumerable.call(source,key))continue;target[key]=source[key]}}return target}function _objectWithoutPropertiesLoose(source,excluded){if(source==null)return{};var target={};var sourceKeys=Object.keys(source);var key,i;for(i=0;i<sourceKeys.length;i++){key=sourceKeys[i];if(excluded.indexOf(key)>=0)continue;target[key]=source[key]}return target}var ButtonGroup=_react.default.forwardRef(function(_param,ref){var variant=_param.variant,size=_param.size,color=_param.color,fullWidth=_param.fullWidth,ripple=_param.ripple,className=_param.className,children=_param.children,rest=_objectWithoutProperties(_param,["variant","size","color","fullWidth","ripple","className","children"]);var buttonGroup=(0,_theme.useTheme)().buttonGroup;var defaultProps=buttonGroup.defaultProps,styles=buttonGroup.styles,valid=buttonGroup.valid;var base=styles.base,dividerColor=styles.dividerColor;variant=variant!==null&&variant!==void 0?variant:defaultProps.variant;size=size!==null&&size!==void 0?size:defaultProps.size;color=color!==null&&color!==void 0?color:defaultProps.color;ripple=ripple!==null&&ripple!==void 0?ripple:defaultProps.ripple;fullWidth=fullWidth!==null&&fullWidth!==void 0?fullWidth:defaultProps.fullWidth;className=(0,_tailwindMerge.twMerge)(defaultProps.className||"",className);var _obj;var classes=(0,_tailwindMerge.twMerge)((0,_classnames.default)((0,_objectsToString.default)(base.initial),(_obj={},_defineProperty(_obj,(0,_objectsToString.default)(base.fullWidth),fullWidth),_defineProperty(_obj,"divide-x",variant!=="outlined"),_defineProperty(_obj,(0,_objectsToString.default)(dividerColor[(0,_findMatch.default)(valid.colors,color,"gray")]),variant!=="outlined"),_obj)),className);return _react.default.createElement("div",_extends({},rest,{ref:ref,className:classes}),_react.default.Children.map(children,function(child,index){var _child_props;return _react.default.isValidElement(child)&&_react.default.cloneElement(child,{variant:variant,size:size,color:color,ripple:ripple,fullWidth:fullWidth,className:(0,_tailwindMerge.twMerge)((0,_classnames.default)({"rounded-r-none":index!==_react.default.Children.count(children)-1,"border-r-0":index!==_react.default.Children.count(children)-1,"rounded-l-none":index!==0}),(_child_props=child.props)===null||_child_props===void 0?void 0:_child_props.className)})}))});ButtonGroup.propTypes={variant:_propTypes.default.oneOf(_button.propTypesVariant),size:_propTypes.default.oneOf(_button.propTypesSize),color:_propTypes.default.oneOf(_button.propTypesColor),fullWidth:_button.propTypesFullWidth,ripple:_button.propTypesRipple,className:_button.propTypesClassName,children:_button.propTypesChildren};ButtonGroup.displayName="MaterialTailwind.ButtonGroup";var _default=ButtonGroup;
-
-/***/ }),
-
 /***/ "./node_modules/@material-tailwind/react/components/Button/index.js":
 /*!**************************************************************************!*\
   !*** ./node_modules/@material-tailwind/react/components/Button/index.js ***!
@@ -3831,6 +3820,17 @@ Object.defineProperty(exports, "__esModule", ({value:true}));function _export(ta
 
 "use strict";
 Object.defineProperty(exports, "__esModule", ({value:true}));function _export(target,all){for(var name in all)Object.defineProperty(target,name,{enumerable:true,get:all[name]})}_export(exports,{Button:function(){return Button},default:function(){return _default}});var _react=_interopRequireDefault(__webpack_require__(/*! react */ "react"));var _propTypes=_interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));var _materialRippleEffects=_interopRequireDefault(__webpack_require__(/*! material-ripple-effects */ "./node_modules/material-ripple-effects/index.js"));var _classnames=_interopRequireDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));var _tailwindMerge=__webpack_require__(/*! tailwind-merge */ "./node_modules/tailwind-merge/dist/index.js");var _findMatch=_interopRequireDefault(__webpack_require__(/*! ../../utils/findMatch */ "./node_modules/@material-tailwind/react/utils/findMatch.js"));var _objectsToString=_interopRequireDefault(__webpack_require__(/*! ../../utils/objectsToString */ "./node_modules/@material-tailwind/react/utils/objectsToString.js"));var _theme=__webpack_require__(/*! ../../context/theme */ "./node_modules/@material-tailwind/react/context/theme.js");var _spinner=_interopRequireDefault(__webpack_require__(/*! ../Spinner */ "./node_modules/@material-tailwind/react/components/Spinner/index.js"));var _button=__webpack_require__(/*! ../../types/components/button */ "./node_modules/@material-tailwind/react/types/components/button.js");function _defineProperty(obj,key,value){if(key in obj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true})}else{obj[key]=value}return obj}function _extends(){_extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key]}}}return target};return _extends.apply(this,arguments)}function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function _objectWithoutProperties(source,excluded){if(source==null)return{};var target=_objectWithoutPropertiesLoose(source,excluded);var key,i;if(Object.getOwnPropertySymbols){var sourceSymbolKeys=Object.getOwnPropertySymbols(source);for(i=0;i<sourceSymbolKeys.length;i++){key=sourceSymbolKeys[i];if(excluded.indexOf(key)>=0)continue;if(!Object.prototype.propertyIsEnumerable.call(source,key))continue;target[key]=source[key]}}return target}function _objectWithoutPropertiesLoose(source,excluded){if(source==null)return{};var target={};var sourceKeys=Object.keys(source);var key,i;for(i=0;i<sourceKeys.length;i++){key=sourceKeys[i];if(excluded.indexOf(key)>=0)continue;target[key]=source[key]}return target}var Button=_react.default.forwardRef(function(_param,ref){var variant=_param.variant,size=_param.size,color=_param.color,fullWidth=_param.fullWidth,ripple=_param.ripple,className=_param.className,children=_param.children,loading=_param.loading,rest=_objectWithoutProperties(_param,["variant","size","color","fullWidth","ripple","className","children","loading"]);var button=(0,_theme.useTheme)().button;var valid=button.valid,defaultProps=button.defaultProps,styles=button.styles;var base=styles.base,variants=styles.variants,sizes=styles.sizes;variant=variant!==null&&variant!==void 0?variant:defaultProps.variant;size=size!==null&&size!==void 0?size:defaultProps.size;color=color!==null&&color!==void 0?color:defaultProps.color;fullWidth=fullWidth!==null&&fullWidth!==void 0?fullWidth:defaultProps.fullWidth;ripple=ripple!==null&&ripple!==void 0?ripple:defaultProps.ripple;className=(0,_tailwindMerge.twMerge)(defaultProps.className||"",className);var rippleEffect=ripple!==undefined&&new _materialRippleEffects.default;var buttonBase=(0,_objectsToString.default)(base.initial);var buttonVariant=(0,_objectsToString.default)(variants[(0,_findMatch.default)(valid.variants,variant,"filled")][(0,_findMatch.default)(valid.colors,color,"gray")]);var buttonSize=(0,_objectsToString.default)(sizes[(0,_findMatch.default)(valid.sizes,size,"md")]);var classes=(0,_tailwindMerge.twMerge)((0,_classnames.default)(buttonBase,buttonSize,buttonVariant,_defineProperty({},(0,_objectsToString.default)(base.fullWidth),fullWidth),{"flex items-center gap-2":loading,"gap-3":size==="lg"}),className);var spinnerClass=(0,_tailwindMerge.twMerge)((0,_classnames.default)({"w-4 h-4":true,"w-5 h-5":size==="lg"}));var _rest_disabled;return _react.default.createElement("button",_extends({},rest,{disabled:(_rest_disabled=rest.disabled)!==null&&_rest_disabled!==void 0?_rest_disabled:loading,ref:ref,className:classes,type:rest.type||"button",onMouseDown:function(e){var onMouseDown=rest===null||rest===void 0?void 0:rest.onMouseDown;if(ripple){rippleEffect.create(e,(variant==="filled"||variant==="gradient")&&color!=="white"?"light":"dark")}return typeof onMouseDown==="function"&&onMouseDown(e)}}),loading&&_react.default.createElement(_spinner.default,{className:spinnerClass}),children)});Button.propTypes={variant:_propTypes.default.oneOf(_button.propTypesVariant),size:_propTypes.default.oneOf(_button.propTypesSize),color:_propTypes.default.oneOf(_button.propTypesColor),fullWidth:_button.propTypesFullWidth,ripple:_button.propTypesRipple,className:_button.propTypesClassName,children:_button.propTypesChildren,loading:_button.propTypesLoading};Button.displayName="MaterialTailwind.Button";var _default=Button;
+
+/***/ }),
+
+/***/ "./node_modules/@material-tailwind/react/components/ButtonGroup/index.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@material-tailwind/react/components/ButtonGroup/index.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", ({value:true}));function _export(target,all){for(var name in all)Object.defineProperty(target,name,{enumerable:true,get:all[name]})}_export(exports,{ButtonGroup:function(){return ButtonGroup},default:function(){return _default}});var _react=_interopRequireDefault(__webpack_require__(/*! react */ "react"));var _propTypes=_interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));var _classnames=_interopRequireDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));var _tailwindMerge=__webpack_require__(/*! tailwind-merge */ "./node_modules/tailwind-merge/dist/index.js");var _findMatch=_interopRequireDefault(__webpack_require__(/*! ../../utils/findMatch */ "./node_modules/@material-tailwind/react/utils/findMatch.js"));var _objectsToString=_interopRequireDefault(__webpack_require__(/*! ../../utils/objectsToString */ "./node_modules/@material-tailwind/react/utils/objectsToString.js"));var _theme=__webpack_require__(/*! ../../context/theme */ "./node_modules/@material-tailwind/react/context/theme.js");var _button=__webpack_require__(/*! ../../types/components/button */ "./node_modules/@material-tailwind/react/types/components/button.js");function _defineProperty(obj,key,value){if(key in obj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true})}else{obj[key]=value}return obj}function _extends(){_extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key]}}}return target};return _extends.apply(this,arguments)}function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function _objectWithoutProperties(source,excluded){if(source==null)return{};var target=_objectWithoutPropertiesLoose(source,excluded);var key,i;if(Object.getOwnPropertySymbols){var sourceSymbolKeys=Object.getOwnPropertySymbols(source);for(i=0;i<sourceSymbolKeys.length;i++){key=sourceSymbolKeys[i];if(excluded.indexOf(key)>=0)continue;if(!Object.prototype.propertyIsEnumerable.call(source,key))continue;target[key]=source[key]}}return target}function _objectWithoutPropertiesLoose(source,excluded){if(source==null)return{};var target={};var sourceKeys=Object.keys(source);var key,i;for(i=0;i<sourceKeys.length;i++){key=sourceKeys[i];if(excluded.indexOf(key)>=0)continue;target[key]=source[key]}return target}var ButtonGroup=_react.default.forwardRef(function(_param,ref){var variant=_param.variant,size=_param.size,color=_param.color,fullWidth=_param.fullWidth,ripple=_param.ripple,className=_param.className,children=_param.children,rest=_objectWithoutProperties(_param,["variant","size","color","fullWidth","ripple","className","children"]);var buttonGroup=(0,_theme.useTheme)().buttonGroup;var defaultProps=buttonGroup.defaultProps,styles=buttonGroup.styles,valid=buttonGroup.valid;var base=styles.base,dividerColor=styles.dividerColor;variant=variant!==null&&variant!==void 0?variant:defaultProps.variant;size=size!==null&&size!==void 0?size:defaultProps.size;color=color!==null&&color!==void 0?color:defaultProps.color;ripple=ripple!==null&&ripple!==void 0?ripple:defaultProps.ripple;fullWidth=fullWidth!==null&&fullWidth!==void 0?fullWidth:defaultProps.fullWidth;className=(0,_tailwindMerge.twMerge)(defaultProps.className||"",className);var _obj;var classes=(0,_tailwindMerge.twMerge)((0,_classnames.default)((0,_objectsToString.default)(base.initial),(_obj={},_defineProperty(_obj,(0,_objectsToString.default)(base.fullWidth),fullWidth),_defineProperty(_obj,"divide-x",variant!=="outlined"),_defineProperty(_obj,(0,_objectsToString.default)(dividerColor[(0,_findMatch.default)(valid.colors,color,"gray")]),variant!=="outlined"),_obj)),className);return _react.default.createElement("div",_extends({},rest,{ref:ref,className:classes}),_react.default.Children.map(children,function(child,index){var _child_props;return _react.default.isValidElement(child)&&_react.default.cloneElement(child,{variant:variant,size:size,color:color,ripple:ripple,fullWidth:fullWidth,className:(0,_tailwindMerge.twMerge)((0,_classnames.default)({"rounded-r-none":index!==_react.default.Children.count(children)-1,"border-r-0":index!==_react.default.Children.count(children)-1,"rounded-l-none":index!==0}),(_child_props=child.props)===null||_child_props===void 0?void 0:_child_props.className)})}))});ButtonGroup.propTypes={variant:_propTypes.default.oneOf(_button.propTypesVariant),size:_propTypes.default.oneOf(_button.propTypesSize),color:_propTypes.default.oneOf(_button.propTypesColor),fullWidth:_button.propTypesFullWidth,ripple:_button.propTypesRipple,className:_button.propTypesClassName,children:_button.propTypesChildren};ButtonGroup.displayName="MaterialTailwind.ButtonGroup";var _default=ButtonGroup;
 
 /***/ }),
 
@@ -4792,28 +4792,6 @@ Object.defineProperty(exports, "__esModule", ({value:true}));function _export(ta
 
 /***/ }),
 
-/***/ "./node_modules/@material-tailwind/react/theme/components/buttonGroup/buttonGroupDividerColor.js":
-/*!*******************************************************************************************************!*\
-  !*** ./node_modules/@material-tailwind/react/theme/components/buttonGroup/buttonGroupDividerColor.js ***!
-  \*******************************************************************************************************/
-/***/ ((__unused_webpack_module, exports) => {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", ({value:true}));Object.defineProperty(exports, "default", ({enumerable:true,get:function(){return _default}}));var buttonGroupDividerColor={white:{divideColor:"divide-blue-gray-50"},black:{divideColor:"divide-gray-800"},"blue-gray":{divideColor:"divide-blue-gray-600"},gray:{divideColor:"divide-gray-800"},brown:{divideColor:"divide-brown-600"},"deep-orange":{divideColor:"divide-deep-orange-600"},orange:{divideColor:"divide-orange-600"},amber:{divideColor:"divide-amber-600"},yellow:{divideColor:"divide-yellow-600"},lime:{divideColor:"divide-lime-600"},"light-green":{divideColor:"divide-light-green-600"},green:{divideColor:"divide-green-600"},teal:{divideColor:"divide-teal-600"},cyan:{divideColor:"divide-cyan-600"},"light-blue":{divideColor:"divide-light-blue-600"},blue:{divideColor:"divide-blue-600"},indigo:{divideColor:"divide-indigo-600"},"deep-purple":{divideColor:"divide-deep-purple-600"},purple:{divideColor:"divide-purple-600"},pink:{divideColor:"divide-pink-600"},red:{divideColor:"divide-red-600"}};var _default=buttonGroupDividerColor;
-
-/***/ }),
-
-/***/ "./node_modules/@material-tailwind/react/theme/components/buttonGroup/index.js":
-/*!*************************************************************************************!*\
-  !*** ./node_modules/@material-tailwind/react/theme/components/buttonGroup/index.js ***!
-  \*************************************************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", ({value:true}));function _export(target,all){for(var name in all)Object.defineProperty(target,name,{enumerable:true,get:all[name]})}_export(exports,{buttonGroup:function(){return buttonGroup},default:function(){return _default}});var _buttonGroupDividerColor=_interopRequireDefault(__webpack_require__(/*! ./buttonGroupDividerColor */ "./node_modules/@material-tailwind/react/theme/components/buttonGroup/buttonGroupDividerColor.js"));var _button=__webpack_require__(/*! ../../../types/components/button */ "./node_modules/@material-tailwind/react/types/components/button.js");function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}var buttonGroup={defaultProps:{variant:"filled",size:"md",color:"gray",fullWidth:false,ripple:true,className:""},valid:{variants:_button.propTypesVariant,sizes:_button.propTypesSize,colors:_button.propTypesColor},styles:{base:{initial:{display:"flex",flexDirection:"row"},fullWidth:{width:"w-full"}},dividerColor:_buttonGroupDividerColor.default}};var _default=buttonGroup;
-
-/***/ }),
-
 /***/ "./node_modules/@material-tailwind/react/theme/components/button/buttonFilled.js":
 /*!***************************************************************************************!*\
   !*** ./node_modules/@material-tailwind/react/theme/components/button/buttonFilled.js ***!
@@ -4866,6 +4844,28 @@ Object.defineProperty(exports, "__esModule", ({value:true}));Object.defineProper
 
 "use strict";
 Object.defineProperty(exports, "__esModule", ({value:true}));function _export(target,all){for(var name in all)Object.defineProperty(target,name,{enumerable:true,get:all[name]})}_export(exports,{button:function(){return button},default:function(){return _default}});var _buttonFilled=_interopRequireDefault(__webpack_require__(/*! ./buttonFilled */ "./node_modules/@material-tailwind/react/theme/components/button/buttonFilled.js"));var _buttonGradient=_interopRequireDefault(__webpack_require__(/*! ./buttonGradient */ "./node_modules/@material-tailwind/react/theme/components/button/buttonGradient.js"));var _buttonOutlined=_interopRequireDefault(__webpack_require__(/*! ./buttonOutlined */ "./node_modules/@material-tailwind/react/theme/components/button/buttonOutlined.js"));var _buttonText=_interopRequireDefault(__webpack_require__(/*! ./buttonText */ "./node_modules/@material-tailwind/react/theme/components/button/buttonText.js"));var _button=__webpack_require__(/*! ../../../types/components/button */ "./node_modules/@material-tailwind/react/types/components/button.js");function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}var button={defaultProps:{variant:"filled",size:"md",color:"gray",fullWidth:false,ripple:true,className:""},valid:{variants:_button.propTypesVariant,sizes:_button.propTypesSize,colors:_button.propTypesColor},styles:{base:{initial:{verticalAlign:"align-middle",userSelect:"select-none",fontFamily:"font-sans",fontWeight:"font-bold",textAlign:"text-center",textTransform:"uppercase",transition:"transition-all",disabled:"disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none"},fullWidth:{display:"block",width:"w-full"}},sizes:{sm:{fontSize:"text-xs",py:"py-2",px:"px-4",borderRadius:"rounded-lg"},md:{fontSize:"text-xs",py:"py-3",px:"px-6",borderRadius:"rounded-lg"},lg:{fontSize:"text-sm",py:"py-3.5",px:"px-7",borderRadius:"rounded-lg"}},variants:{filled:_buttonFilled.default,gradient:_buttonGradient.default,outlined:_buttonOutlined.default,text:_buttonText.default}}};var _default=button;
+
+/***/ }),
+
+/***/ "./node_modules/@material-tailwind/react/theme/components/buttonGroup/buttonGroupDividerColor.js":
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/@material-tailwind/react/theme/components/buttonGroup/buttonGroupDividerColor.js ***!
+  \*******************************************************************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", ({value:true}));Object.defineProperty(exports, "default", ({enumerable:true,get:function(){return _default}}));var buttonGroupDividerColor={white:{divideColor:"divide-blue-gray-50"},black:{divideColor:"divide-gray-800"},"blue-gray":{divideColor:"divide-blue-gray-600"},gray:{divideColor:"divide-gray-800"},brown:{divideColor:"divide-brown-600"},"deep-orange":{divideColor:"divide-deep-orange-600"},orange:{divideColor:"divide-orange-600"},amber:{divideColor:"divide-amber-600"},yellow:{divideColor:"divide-yellow-600"},lime:{divideColor:"divide-lime-600"},"light-green":{divideColor:"divide-light-green-600"},green:{divideColor:"divide-green-600"},teal:{divideColor:"divide-teal-600"},cyan:{divideColor:"divide-cyan-600"},"light-blue":{divideColor:"divide-light-blue-600"},blue:{divideColor:"divide-blue-600"},indigo:{divideColor:"divide-indigo-600"},"deep-purple":{divideColor:"divide-deep-purple-600"},purple:{divideColor:"divide-purple-600"},pink:{divideColor:"divide-pink-600"},red:{divideColor:"divide-red-600"}};var _default=buttonGroupDividerColor;
+
+/***/ }),
+
+/***/ "./node_modules/@material-tailwind/react/theme/components/buttonGroup/index.js":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/@material-tailwind/react/theme/components/buttonGroup/index.js ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", ({value:true}));function _export(target,all){for(var name in all)Object.defineProperty(target,name,{enumerable:true,get:all[name]})}_export(exports,{buttonGroup:function(){return buttonGroup},default:function(){return _default}});var _buttonGroupDividerColor=_interopRequireDefault(__webpack_require__(/*! ./buttonGroupDividerColor */ "./node_modules/@material-tailwind/react/theme/components/buttonGroup/buttonGroupDividerColor.js"));var _button=__webpack_require__(/*! ../../../types/components/button */ "./node_modules/@material-tailwind/react/types/components/button.js");function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}var buttonGroup={defaultProps:{variant:"filled",size:"md",color:"gray",fullWidth:false,ripple:true,className:""},valid:{variants:_button.propTypesVariant,sizes:_button.propTypesSize,colors:_button.propTypesColor},styles:{base:{initial:{display:"flex",flexDirection:"row"},fullWidth:{width:"w-full"}},dividerColor:_buttonGroupDividerColor.default}};var _default=buttonGroup;
 
 /***/ }),
 
@@ -15699,6 +15699,206 @@ function AddRecordForm() {
 
 /***/ }),
 
+/***/ "./src/components/EditRecord.jsx":
+/*!***************************************!*\
+  !*** ./src/components/EditRecord.jsx ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ EditRecord)
+/* harmony export */ });
+/* harmony import */ var _api_apiQuery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api/apiQuery */ "./src/api/apiQuery.js");
+/* harmony import */ var _material_tailwind_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-tailwind/react */ "./node_modules/@material-tailwind/react/index.js");
+/* harmony import */ var _material_tailwind_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function EditRecord({
+  id
+}) {
+  const [response, setResponse] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(false);
+  const HandleSubmit = e => {
+    e.preventDefault();
+
+    //     // get form data
+    //     const data = new FormData(e.target);
+    //     const newData = Object.fromEntries(data);
+
+    //     // sending data to api
+    //     CreateRecord(newData).then((res) => {
+    //         setResponse(res);
+
+    //         // reset the form
+    //         if (res.status == 'success') {
+    //             e.target.reset();
+    //         }
+    //     });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    class: "max-w-screen-sm mx-auto",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      class: "relative flex w-full max-w-[24rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        class: "relative grid px-4 py-8 m-0 overflow-hidden text-center text-white bg-gray-900 place-items-center rounded-xl bg-clip-border shadow-gray-900/20",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          class: "h-20 p-6 pb-0 mb-4 text-white",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
+            xmlns: "http://www.w3.org/2000/svg",
+            fill: "none",
+            viewBox: "0 0 24 24",
+            "stroke-width": "1.5",
+            stroke: "currentColor",
+            class: "w-10 h-10 text-white",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round",
+              d: "M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            })
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h5", {
+          class: "mt-0 block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-white",
+          children: ["Edit Book Record #", id]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        class: "p-6",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          class: "block overflow-visible",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            class: "relative block w-full overflow-hidden !overflow-x-hidden !overflow-y-visible bg-transparent",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              role: "tabpanel",
+              class: "w-full p-0 font-sans text-base antialiased font-light leading-relaxed text-gray-700 h-max",
+              "data-value": "card",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
+                class: "flex flex-col gap-4 mt-12",
+                onSubmit: HandleSubmit,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+                    class: "block mb-2 font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900",
+                    children: "Book Name"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                    class: "relative h-10 w-full min-w-[200px]",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                      type: "text",
+                      id: "book_name",
+                      name: "book_name",
+                      placeholder: "Don Quixote",
+                      class: "peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent !border-t-blue-gray-200 bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:!border-t-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                      class: "before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all before:content-none after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all after:content-none peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-gray-900 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500"
+                    })]
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                  class: "my-3",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                    class: "flex items-center gap-4 my-4",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "w-full",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+                        class: "block mb-2 font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900",
+                        children: "Author"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                        class: "relative h-10",
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                          type: "text",
+                          id: "author_name",
+                          name: "author_name",
+                          placeholder: "Miguel de Cervantes",
+                          class: "peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent !border-t-blue-gray-200 bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:!border-t-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                          class: "before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all before:content-none after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all after:content-none peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-gray-900 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500"
+                        })]
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "w-full",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+                        class: "block mb-2 font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900",
+                        children: "Publisher"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                        class: "relative h-10",
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                          id: "publisher",
+                          name: "publisher",
+                          type: "text",
+                          placeholder: "Dover Publications",
+                          class: "peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent !border-t-blue-gray-200 bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:!border-t-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                          class: "before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all before:content-none after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all after:content-none peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-gray-900 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500"
+                        })]
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                    class: "flex items-center gap-4 my-4",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "w-full",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+                        class: "block mb-2 font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900",
+                        children: "ISBN"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                        class: "relative h-10",
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                          type: "number",
+                          name: "isbn",
+                          placeholder: "978-3-16-148410-0",
+                          id: "isbn",
+                          class: "peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent !border-t-blue-gray-200 bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:!border-t-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                          class: "before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all before:content-none after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all after:content-none peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-gray-900 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500"
+                        })]
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "w-full",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+                        class: "block mb-2 font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900",
+                        children: "Publication Date"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                        class: "relative h-10",
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                          id: "publication_date",
+                          name: "publication_date",
+                          type: "date",
+                          placeholder: "date",
+                          class: "peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent !border-t-blue-gray-200 bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:!border-t-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                          class: "before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all before:content-none after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all after:content-none peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-gray-900 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500"
+                        })]
+                      })]
+                    })]
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                  class: "select-none rounded-lg bg-gray-900 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none",
+                  type: "submit",
+                  children: "Create Record"
+                })]
+              })
+            })
+          })
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      id: "response",
+      children: [response.status === 'success' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_1__.Alert, {
+        color: "green",
+        className: "mt-4",
+        children: "A new record added."
+      }), response.status === 'error' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_1__.Alert, {
+        color: "red",
+        className: "mt-4",
+        children: "Fields are empty or Something is wrong.."
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
 /***/ "./src/components/ViewRecords.jsx":
 /*!****************************************!*\
   !*** ./src/components/ViewRecords.jsx ***!
@@ -15713,7 +15913,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_tailwind_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material-tailwind/react */ "./node_modules/@material-tailwind/react/index.js");
 /* harmony import */ var _material_tailwind_react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _api_apiQuery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../api/apiQuery */ "./src/api/apiQuery.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -15721,6 +15923,7 @@ function ViewRecords({
   tableRows
 }) {
   const TABLE_HEAD = ["id", "Title", "Author", "Publisher", "ISBN", "Publication", "Action"];
+  const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
 
   /// delete item
   const deleteItem = (book_id, e) => {
@@ -15730,6 +15933,9 @@ function ViewRecords({
         e.target.closest('tr').remove();
       }
     });
+  };
+  const editItem = book_id => {
+    navigate("/wp-admin/admin.php?page=book-manager&book_id=" + book_id);
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_0__.Card, {
     className: "h-full w-full overflow-scroll mt-4",
@@ -15816,6 +16022,7 @@ function ViewRecords({
                   onClick: e => deleteItem(book_id, e),
                   children: "Delete"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_0__.Button, {
+                  onClick: e => editItem(book_id),
                   children: "Edit"
                 })]
               })
@@ -15877,7 +16084,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _material_tailwind_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-tailwind/react */ "./node_modules/@material-tailwind/react/index.js");
 /* harmony import */ var _material_tailwind_react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var _components_EditRecord__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/EditRecord */ "./src/components/EditRecord.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 
 
 
@@ -15891,6 +16102,18 @@ function BookManager() {
   const [maxPage, setMaxpage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useState)(1);
   const [currentPage, setcurrentPage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useState)(1);
   const [searchString, setSearchString] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useState)('');
+  let [searchParams, setSearchParams] = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_9__.useSearchParams)();
+  const currentUrl = window.location.href;
+  const {
+    book_id
+  } = (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_3__.getQueryArgs)(currentUrl);
+  if (book_id) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_EditRecord__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        id: book_id
+      })
+    });
+  }
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useLayoutEffect)(() => {
     if (searchString.length > 0) {
       (0,_api_apiQuery__WEBPACK_IMPORTED_MODULE_4__.searchRecords)(searchString).then(res => {
@@ -15905,17 +16128,17 @@ function BookManager() {
       });
     }
   }, [currentPage, searchString]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
       className: "flex justify-between",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h1", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h1", {
         class: "text-9xl font-bold",
         children: "All Book Records"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
         className: "search-form",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           className: "w-72",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_6__.Input, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react__WEBPACK_IMPORTED_MODULE_6__.Input, {
             onChange: e => {
               setSearchString(e.target.value);
             },
@@ -15923,9 +16146,9 @@ function BookManager() {
           })
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_ViewRecords__WEBPACK_IMPORTED_MODULE_1__.ViewRecords, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_ViewRecords__WEBPACK_IMPORTED_MODULE_1__.ViewRecords, {
       tableRows: tableRows
-    }), maxPage > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Pagination__WEBPACK_IMPORTED_MODULE_2__.Pagination, {
+    }), maxPage > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Pagination__WEBPACK_IMPORTED_MODULE_2__.Pagination, {
       maxPage: maxPage,
       setcurrentPage: setcurrentPage
     })]
@@ -16052,27 +16275,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Root)
 /* harmony export */ });
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/@remix-run/router/dist/router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/@remix-run/router/dist/router.js");
 /* harmony import */ var _BookManager__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BookManager */ "./src/routes/BookManager.jsx");
 /* harmony import */ var _AddRecord__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AddRecord */ "./src/routes/AddRecord.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_EditRecord__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/EditRecord */ "./src/components/EditRecord.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
 
 function Root() {
-  const location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useLocation)();
-  const match = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.matchPath)({
+  const location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useLocation)();
+  const match = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.matchPath)({
     path: '/wp-admin/admin.php',
     exact: true
   }, location.pathname);
   const page = new URLSearchParams(location.search).get('page');
   switch (page) {
     case 'book-manager':
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_BookManager__WEBPACK_IMPORTED_MODULE_0__["default"], {});
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_BookManager__WEBPACK_IMPORTED_MODULE_0__["default"], {});
     case 'add-book-record':
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_AddRecord__WEBPACK_IMPORTED_MODULE_1__["default"], {});
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_AddRecord__WEBPACK_IMPORTED_MODULE_1__["default"], {});
   }
 }
 

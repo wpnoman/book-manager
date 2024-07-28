@@ -1,10 +1,12 @@
 import React from 'react'
 import { ViewRecords } from '../components/ViewRecords'
 import { Pagination } from './Pagination'
-import { addQueryArgs } from '@wordpress/url'
+import { addQueryArgs, getQueryArgs } from '@wordpress/url'
 import { getRecords, searchRecords } from "../api/apiQuery";
 import { useEffect, useLayoutEffect, useState } from "@wordpress/element";
 import { Input } from "@material-tailwind/react";
+import { useSearchParams } from 'react-router-dom';
+import EditRecord from '../components/EditRecord';
 
 export default function BookManager() {
 
@@ -12,6 +14,16 @@ export default function BookManager() {
     const [maxPage, setMaxpage] = useState(1);
     const [currentPage, setcurrentPage] = useState(1);
     const [searchString, setSearchString] = useState('');
+    let [searchParams, setSearchParams] = useSearchParams();
+
+    const currentUrl = window.location.href
+    const {book_id} = getQueryArgs(currentUrl);
+
+    if( book_id ){
+        return <>
+            <EditRecord id={book_id}/>
+        </>
+    }
 
     useLayoutEffect(() => {
         if (searchString.length > 0) {
@@ -29,6 +41,7 @@ export default function BookManager() {
 
     }, [currentPage, searchString]);
 
+    
 
     return (
         <>
@@ -43,6 +56,7 @@ export default function BookManager() {
                     </div>
                 </div>
             </div>
+
             <ViewRecords tableRows={tableRows} />
             {maxPage > 0 && <Pagination maxPage={maxPage} setcurrentPage={setcurrentPage} />}
 

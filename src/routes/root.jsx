@@ -1,6 +1,7 @@
 import { matchPath, useLocation } from "react-router-dom"
 import BookManager from "./BookManager";
 import AddRecord from "./AddRecord";
+import EditRecord from "../components/EditRecord";
 
 export default function Root() {
   const location = useLocation();
@@ -9,7 +10,7 @@ export default function Root() {
 
   switch (page) {
     case 'book-manager':
-      return <BookManager/>;
+      return <BookManager />;
     case 'add-book-record':
       return <AddRecord />;
   }

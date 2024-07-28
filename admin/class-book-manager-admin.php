@@ -39,10 +39,19 @@ class Book_Manager_Admin
 
 		add_submenu_page( 
 			'book-manager',
-			__( 'Add Records', 'notificationx' ),
-			__( 'Add Records', 'notificationx' ),
+			__( 'Add Records', 'book-manager' ),
+			__( 'Add Records', 'book-manager' ),
 			'manage_options',
 			'add-book-record',
+			[$this, 'dashboard'],
+		);
+
+		add_submenu_page( 
+			'book-manager',
+			__( 'Edit Records', 'book-manager' ),
+			__( 'Edit Records', 'book-manager' ),
+			'manage_options',
+			'edit-book-record',
 			[$this, 'dashboard'],
 		);
 	}
@@ -56,6 +65,7 @@ class Book_Manager_Admin
 		// dashboard output
 		include_once BKM_ADDONS_PATH . 'admin/views/main.dashboard.php';
 	}
+
 
 	public function enqueue_assets($admin_page)
 	{
@@ -73,7 +83,7 @@ class Book_Manager_Admin
 		 */
 
 		$menus = ['book-records_page_add-book-record','toplevel_page_book-manager'];
-		
+
 		if ( !in_array( $admin_page, $menus ) ) {
 			return;
 		}

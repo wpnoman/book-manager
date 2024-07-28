@@ -1,24 +1,28 @@
 import { Card, Typography, Button } from "@material-tailwind/react";
 import { deleteRecord } from "../api/apiQuery";
+import { useNavigate } from "react-router-dom";
 
 
+export function ViewRecords({ tableRows }) {
 
-export function ViewRecords({tableRows}) {
 
-  
 
   const TABLE_HEAD = ["id", "Title", "Author", "Publisher", "ISBN", "Publication", "Action"];
+  const navigate = useNavigate();
 
+  /// delete item
+  const deleteItem = (book_id, e) => {
+    deleteRecord(book_id).then((res) => {
+      if (res == true) {
+        console.log('Item Deleted');
+        e.target.closest('tr').remove()
+      }
+    });
+  }
 
-/// delete item
-const deleteItem = (book_id, e) => {
-  deleteRecord(book_id).then((res) => {
-    if( res == true ){
-      console.log('Item Deleted');
-      e.target.closest('tr').remove()
-    }
-  });
-}
+  const editItem = (book_id) => {
+    navigate("/wp-admin/admin.php?page=book-manager&book_id="+book_id);
+  }
 
 
   return (
@@ -114,7 +118,7 @@ const deleteItem = (book_id, e) => {
                 <td className={classes}>
                   <div className="flex gap-4">
                     <Button color="red" onClick={(e) => deleteItem(book_id, e)}>Delete</Button>
-                    <Button>Edit</Button>
+                    <Button onClick={(e) => editItem(book_id)}>Edit</Button>
                   </div>
                 </td>
 
