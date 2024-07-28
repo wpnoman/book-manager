@@ -15450,7 +15450,8 @@ function CreateRecord({
       author: author_name,
       publisher: publisher,
       ISBN: isbn,
-      publication_date: publication_date
+      publication_date: publication_date,
+      _nonce: bkm_settings.nonce
     }
   }).then(res => {
     return res;
@@ -15475,7 +15476,8 @@ function deleteRecord(book_id) {
     path: '/book-manager/v1/delete-record',
     method: 'POST',
     data: {
-      id: book_id
+      id: book_id,
+      _nonce: bkm_settings.nonce
     }
   }).then(res => {
     return res;
@@ -15523,7 +15525,7 @@ __webpack_require__.r(__webpack_exports__);
 function AddRecordForm() {
   const [response, setResponse] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
   const HandleSubmit = e => {
-    e.preventDefault('hello');
+    e.preventDefault();
 
     // get form data
     const data = new FormData(e.target);
@@ -15532,7 +15534,6 @@ function AddRecordForm() {
     // sending data to api
     (0,_api_apiQuery__WEBPACK_IMPORTED_MODULE_1__.CreateRecord)(newData).then(res => {
       setResponse(res);
-      console.log(res);
 
       // reset the form
       if (res.status == 'success') {
@@ -15901,7 +15902,6 @@ function BookManager() {
       (0,_api_apiQuery__WEBPACK_IMPORTED_MODULE_4__.getRecords)(currentPage).then(res => {
         setTableRows(res.results);
         setMaxpage(res.max_page);
-        // console.log(res.results.length, 'first')
       });
     }
   }, [currentPage, searchString]);

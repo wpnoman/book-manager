@@ -9,7 +9,7 @@ export default function AddRecordForm() {
     const [response, setResponse] = useState(false);
 
     const HandleSubmit = (e) => {
-        e.preventDefault('hello');
+        e.preventDefault();
 
         // get form data
         const data = new FormData(e.target);
@@ -18,8 +18,6 @@ export default function AddRecordForm() {
         // sending data to api
         CreateRecord(newData).then((res) => {
             setResponse(res);
-
-            console.log(res);
 
             // reset the form
             if (res.status == 'success') {

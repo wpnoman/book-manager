@@ -8,7 +8,7 @@ export function CreateRecord({ book_name, author_name, publisher, isbn, publicat
     return apiFetch({
         path: '/book-manager/v1/create-record',
         method: 'POST',
-        data: { title: book_name, author: author_name, publisher: publisher, ISBN: isbn, publication_date: publication_date },
+        data: { title: book_name, author: author_name, publisher: publisher, ISBN: isbn, publication_date: publication_date, _nonce: bkm_settings.nonce },
     }).then((res) => {
         return res;
     });
@@ -33,7 +33,7 @@ export function deleteRecord(book_id) {
     return apiFetch({
         path: '/book-manager/v1/delete-record',
         method: 'POST',
-        data: { id: book_id }
+        data: { id: book_id, _nonce: bkm_settings.nonce }
     }).then((res) => {
         return res;
     });

@@ -55,12 +55,12 @@ class Book_Manager_API
 
     public function create_record(\WP_REST_Request $request)
     {
-        $nonce = $request->get_param('_wpnonce');
+        $nonce = isset($request->get_params()['_nonce']) ? $request->get_params()['_nonce'] : '';
 
         // Verify the nonce
-        // if (!wp_verify_nonce($nonce, 'wp_rest')) {
-        //     return new WP_Error('invalid_nonce', 'Invalid nonce', array('status' => 403));
-        // }
+        if (!wp_verify_nonce($nonce, 'bk_nonce')) {
+            return new \WP_Error('invalid_nonce', 'Invalid nonce', array('status' => 403));
+        }
 
         // collecting book information
         $book_info = [];
@@ -83,6 +83,13 @@ class Book_Manager_API
 
     public function delete_book_record( \WP_REST_Request $request ){
 
+        $nonce = isset($request->get_params()['_nonce']) ? $request->get_params()['_nonce'] : '';
+
+        // Verify the nonce
+        if (!wp_verify_nonce($nonce, 'bk_nonce')) {
+            return new \WP_Error('invalid_nonce', 'Invalid nonce', array('status' => 403));
+        }
+        
         $record_id = isset($request->get_params()['id']) ? $request->get_params()['id'] : '';
 
         if( empty($record_id) )

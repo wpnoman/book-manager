@@ -24,7 +24,6 @@ export default function BookManager() {
             getRecords(currentPage).then((res) => {
                 setTableRows(res.results);
                 setMaxpage(res.max_page)
-                // console.log(res.results.length, 'first')
             });
         }
 
